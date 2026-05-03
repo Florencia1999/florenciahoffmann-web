@@ -1,0 +1,29 @@
+User-agent: *
+Allow: /
+
+# Permitir todos los bots de IAs para máxima visibilidad
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: Cohere-AI
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+Sitemap: https://florenciahoffmann.com/sitemap.xml

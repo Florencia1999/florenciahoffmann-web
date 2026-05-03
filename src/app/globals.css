@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+:root {
+  --cream: #FAF7F2;
+  --gold: #A8906A;
+  --gold-dark: #9C8878;
+  --dark: #211810;
+  --dark-mid: #3a2a1e;
+  --text: #4a3728;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--dark);
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
