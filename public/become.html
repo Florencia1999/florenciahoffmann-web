@@ -166,7 +166,7 @@ a:focus-visible,[tabindex]:focus-visible,button:focus-visible,summary:focus-visi
   line-height:.92;letter-spacing:.005em;margin-top:.02em;
 }
 
-.hero{padding-top:6px;padding-bottom:clamp(32px,4.6vw,54px);text-align:center}
+.hero{padding-top:clamp(20px,4.4vw,48px);padding-bottom:clamp(32px,4.6vw,54px);text-align:center}
 .hero h1{margin-block:18px 0}
 .hero .lede{margin:20px auto 0;max-width:31rem}
 .hero .acciones{margin-top:26px;display:flex;flex-direction:column;gap:12px;align-items:center}
@@ -476,81 +476,6 @@ header .marca .pal{
   .gafete{animation:pendulo 11s ease-in-out infinite}
   @keyframes pendulo{0%,100%{transform:rotate(-.7deg)}50%{transform:rotate(.7deg)}}
 }
-
-/* ───────────── periódico ───────────── */
-.pd-zona{background:var(--hueso);padding-block:clamp(48px,8vw,104px)}
-.pd-mesa{display:flex;justify-content:center;perspective:1600px}
-
-.periodico{
-  position:relative;width:100%;max-width:720px;
-  background:#F4EEE1;color:#2B2520;
-  padding:clamp(20px,3.6vw,38px) clamp(16px,3vw,34px) clamp(18px,2.6vw,28px);
-  transform:rotate(-1deg) rotateX(2.5deg);
-  box-shadow:
-    0 40px 64px -34px rgba(38,22,12,.45),
-    0 6px 14px -6px rgba(38,22,12,.2),
-    0 1px 0 rgba(255,255,255,.7) inset;
-}
-/* doblez central y grano de papel */
-.periodico::before{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background:
-    linear-gradient(90deg,transparent 48.4%,rgba(120,96,70,.13) 49.6%,rgba(255,255,255,.5) 50.4%,transparent 51.6%),
-    linear-gradient(104deg,rgba(0,0,0,.055),transparent 16%,transparent 84%,rgba(0,0,0,.07));
-}
-.periodico::after{
-  content:"";position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;opacity:.42;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)' opacity='.55'/%3E%3C/svg%3E");
-}
-
-.pd-cabecera{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
-.pd-lado{
-  flex:1;font-size:.46rem;letter-spacing:.24em;text-transform:uppercase;
-  color:#7A6A57;white-space:nowrap;
-}
-.pd-der{text-align:right}
-.pd-nombre{
-  flex:0 0 auto;font-family:var(--display);
-  font-size:clamp(1.5rem,5.6vw,2.6rem);letter-spacing:.2em;
-  text-transform:uppercase;padding-left:.2em;line-height:1;white-space:nowrap;
-}
-.pd-nombre em{
-  display:block;font-family:var(--script);font-style:normal;text-transform:none;
-  letter-spacing:0;padding-left:0;font-size:.72em;line-height:.74;
-  margin-top:-.2em;transform:translateX(.3em);color:var(--guinda);
-}
-.pd-regla-doble{border-top:2.5px solid #2B2520;border-bottom:1px solid #2B2520;height:4px;margin-top:12px}
-.pd-regla-fina{border-top:1px solid rgba(43,37,32,.42);margin-block:10px}
-.pd-sub{
-  margin:8px 0 0;text-align:center;font-size:.48rem;letter-spacing:.22em;
-  text-transform:uppercase;color:#6F6152;
-}
-.pd-titular{
-  margin:6px 0 0;text-align:center;font-family:var(--display);
-  font-size:clamp(1.5rem,6vw,2.9rem);line-height:1.02;letter-spacing:.02em;
-  text-transform:uppercase;
-}
-.pd-titular .cursiva{color:var(--guinda);font-size:1.1em}
-
-.pd-cuerpo{display:grid;gap:16px}
-@media(min-width:700px){.pd-cuerpo{grid-template-columns:1fr 1.02fr 1fr;gap:20px}}
-.pd-col{display:flex;flex-direction:column;gap:8px}
-.pd-col p{margin:0;font-size:.6rem;line-height:1.62;text-align:justify;hyphens:auto;color:#3E362D}
-.pd-cap{float:left;font-family:var(--display);font-size:2.2em;line-height:.8;padding:.05em .1em 0 0;color:var(--guinda)}
-.pd-fecha{
-  display:flex;flex-direction:column;align-items:center;text-align:center;
-  border-inline:1px solid rgba(43,37,32,.28);padding-inline:12px;
-}
-@media(max-width:699px){.pd-fecha{border-inline:0;border-block:1px solid rgba(43,37,32,.28);padding-block:12px}}
-.pd-rev{font-size:.46rem;letter-spacing:.3em;text-transform:uppercase;color:#7A6A57;padding-left:.3em}
-.pd-n{font-family:var(--display);font-size:clamp(3.4rem,14vw,5.4rem);line-height:.86}
-.pd-mes{font-family:var(--display);font-size:clamp(.95rem,3.6vw,1.4rem);letter-spacing:.24em;text-transform:uppercase;padding-left:.24em}
-.pd-anio{font-size:.5rem;letter-spacing:.52em;color:#7A6A57;padding-left:.52em;margin-top:4px}
-.pd-pie{
-  display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;
-  font-size:.46rem;letter-spacing:.22em;text-transform:uppercase;color:var(--guinda);
-}
-.news-info{display:flex;flex-direction:column;align-items:center}
 
 /* ───────────── dolor ───────────── */
 .dolor{background:var(--papel)}
@@ -1073,58 +998,6 @@ body{padding-bottom:86px}
   </span>
   <a class="btn-min" href="#inversion">Reservar mi lugar</a>
 </header>
-
-<!-- ══════════ PERIÓDICO ══════════ -->
-<section class="pd-zona">
-  <div class="wrap">
-    <div class="pd-mesa">
-      <article class="periodico">
-        <div class="pd-cabecera">
-          <span class="pd-lado">Edición privada</span>
-          <span class="pd-nombre">Become <em>experience</em></span>
-          <span class="pd-lado pd-der">N.º 01</span>
-        </div>
-
-        <div class="pd-regla-doble"></div>
-        <p class="pd-sub">Ciudad de México · Sábado 17 de octubre de 2026 · Precio: tu atención</p>
-        <div class="pd-regla-fina"></div>
-
-        <h2 class="pd-titular">Una nueva era <span class="cursiva">comienza</span></h2>
-        <div class="pd-regla-fina"></div>
-
-        <div class="pd-cuerpo">
-          <div class="pd-col">
-            <p><span class="pd-cap">U</span>n grupo pequeño de mujeres. Un día completo. Una casa privada en la Ciudad de México, con la dirección reservada hasta que el lugar esté confirmado.</p>
-            <p>De diez de la mañana a seis de la tarde, sin bloques sueltos y sin entradas y salidas. Un solo día, del principio al final, en la misma mesa.</p>
-          </div>
-
-          <div class="pd-fecha">
-            <span class="pd-rev">Se abre el</span>
-            <span class="pd-n">17</span>
-            <span class="pd-mes">Octubre</span>
-            <span class="pd-anio">2026</span>
-          </div>
-
-          <div class="pd-col">
-            <p><span class="pd-cap">C</span>uatro fases y ninguna funciona sin la anterior: Reveal, Remember, Become, Embody. Cada una es un ejercicio que se hace, no un tema que se explica.</p>
-            <p>Se sale con el techo identificado y escrito, la declaración dicha en voz alta y el plan de noventa días terminado antes de cruzar la puerta.</p>
-          </div>
-        </div>
-
-        <div class="pd-regla-fina"></div>
-        <div class="pd-pie">
-          <span>Experiencia presencial</span>
-          <span>Comida incluida</span>
-          <span>Cupo limitado</span>
-        </div>
-      </article>
-    </div>
-
-    <div class="news-info" style="margin-top:clamp(36px,6vw,60px)">
-      <a class="btn" href="https://buy.stripe.com/14A28r3zP5jieFDe5Z1sQ0G">Reservar mi lugar</a>
-    </div>
-  </div>
-</section>
 
 <!-- ══════════ HERO ══════════ -->
 <section class="hero wrap">
