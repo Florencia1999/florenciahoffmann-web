@@ -146,7 +146,7 @@ body>header{
 .btn-full{width:100%;max-width:420px}
 .micro{font-size:.79rem;color:var(--humo);line-height:1.5;max-width:30rem}
 
-a:focus-visible,[tabindex]:focus-visible,button:focus-visible{
+a:focus-visible,[tabindex]:focus-visible,button:focus-visible,summary:focus-visible{
   outline:2px solid var(--guinda);outline-offset:4px;
 }
 
@@ -787,19 +787,56 @@ header .marca .pal{
 .pendiente p{margin:0;font-size:.92rem;color:var(--humo)}
 
 /* ───────────── FAQ ───────────── */
-.faq{border-top:1px solid var(--hilo-suave)}
-.faq details{border-bottom:1px solid var(--hilo-suave)}
-.faq summary{
-  cursor:pointer;list-style:none;padding:22px 34px 22px 0;position:relative;
-  font-family:var(--display);font-size:1.05rem;line-height:1.35;
+.faq-bloque{margin-top:18px}
+.faq-boton{
+  list-style:none;cursor:pointer;display:flex;justify-content:flex-start;padding:0;
 }
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{
-  content:"+";position:absolute;right:4px;top:21px;color:var(--guinda);
-  font-family:var(--sans);font-size:1.1rem;transition:transform .25s ease;
+.faq-boton::-webkit-details-marker{display:none}
+.faq-pill{
+  display:inline-flex;align-items:center;gap:15px;
+  border:1px solid var(--guinda);color:var(--guinda);background:transparent;
+  padding:18px 32px;border-radius:1px;max-width:100%;
+  font-family:var(--sans);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;
+  line-height:1.3;text-align:center;
+  transition:background .25s ease,color .25s ease;
 }
-.faq details[open] summary::after{content:"–"}
-.faq .resp{padding:0 0 24px;margin:0;color:var(--humo);max-width:44rem;font-size:.98rem}
+.faq-boton:hover .faq-pill{background:var(--guinda);color:#FDF8F4}
+.faq-pill-txt::before{content:attr(data-abrir)}
+.faq-bloque[open] .faq-pill-txt::before{content:attr(data-cerrar)}
+.faq-pill-ico{position:relative;width:14px;height:14px;flex:0 0 auto;transition:transform .35s ease}
+.faq-pill-ico::before,.faq-pill-ico::after{
+  content:"";position:absolute;left:50%;top:50%;background:currentColor;transform:translate(-50%,-50%);
+}
+.faq-pill-ico::before{width:14px;height:1px}
+.faq-pill-ico::after{width:1px;height:14px;transition:opacity .35s ease}
+.faq-bloque[open] .faq-pill-ico{transform:rotate(180deg)}
+.faq-bloque[open] .faq-pill-ico::after{opacity:0}
+
+.faq-lista{
+  counter-reset:faq;margin-top:38px;
+  border-top:1px solid var(--hilo-suave);
+  animation:faqAbrir .45s ease both;
+}
+.faq-item{
+  counter-increment:faq;display:grid;gap:11px;
+  padding:26px 0;border-bottom:1px solid var(--hilo-suave);
+}
+.faq-item h3{
+  font-family:var(--display);font-size:1.06rem;line-height:1.35;
+  letter-spacing:0;text-transform:none;
+  display:grid;grid-template-columns:auto minmax(0,1fr);gap:0 14px;align-items:baseline;
+}
+.faq-item h3::before{
+  content:counter(faq,decimal-leading-zero);
+  font-family:var(--sans);font-size:.58rem;letter-spacing:.2em;
+  color:var(--guinda);
+}
+.faq-item .resp{margin:0;color:var(--humo);max-width:44rem;font-size:.98rem;line-height:1.66}
+@media (max-width:620px){
+  .faq-pill{width:100%;justify-content:space-between;padding:18px 24px;text-align:left}
+}
+@keyframes faqAbrir{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.faq-lista{animation:none}}
 
 /* ───────────── precio ───────────── */
 .precio-caja{
@@ -1486,16 +1523,48 @@ body{padding-bottom:86px}
 <section class="wrap stack g22">
   <p class="eyebrow">Lo que me suelen preguntar</p>
   <h2>Preguntas <span class="cursiva">frecuentes</span></h2>
-  <div class="faq" style="margin-top:14px">
-    <details open><summary>¿Dónde exactamente es?</summary><p class="resp">Es en mi casa, en la Ciudad de México. Por eso el grupo es pequeño.</p></details>
-    <details><summary>No vivo en la Ciudad de México. ¿Vale la pena viajar?</summary><p class="resp">Es presencial y no hay versión en línea: lo que pasa en la sala no se traslada a una pantalla.<br><br>Si tienes que volar, yo creo que vale la pena. Es un fin de semana — llegas el viernes, vives el sábado completo, regresas el domingo. Y hay algo que empieza antes del día: cuando decides moverte de tu ciudad por ti, algo ya cambió.<br><br>Yo he tomado vuelos para estar en salas que me movieron algo, y ninguno me ha pesado.<br><br>Si quieres ayuda con la logística, escríbeme. Y no necesitas esperarme para apartar tu lugar.</p></details>
-    <details><summary>No sé si esto es para mí.</summary><p class="resp">La sección de arriba está escrita justo para eso, y está escrita en serio. Si después de leerla sigues dudando, escríbeme y lo platicamos: prefiero decirte que no es tu momento a que ocupes un lugar por convencerte a medias.</p></details>
-    <details><summary>Ya hice cosas parecidas y no me cambiaron nada.</summary><p class="resp">A mí también me pasó. Lo que noté después es que casi todas trabajaban la estrategia y ninguna la identidad, y por eso el efecto duraba lo que duraba el entusiasmo. Aquí el trabajo es al revés: primero quién toma las decisiones, después las decisiones.</p></details>
-    <details><summary>No tengo el monto completo ahora mismo.</summary><p class="resp">Antes de descartarlo, platícalo conmigo. Casi siempre hay una forma, y hay dos que funcionan bien:<br><br><strong>Tu tarjeta de crédito.</strong> Si la tuya te da meses sin intereses, puedes apoyarte en eso: el cargo se hace completo y tú lo difieres con tu banco.<br><br><strong>Un plan de pagos.</strong> Apartas tu lugar con un anticipo y acordamos el resto en pagos. La única condición es que quede cubierto antes del día del evento.<br><br>Escríbeme por <a href="https://wa.me/525564938428?text=Hola%20Florencia%2C%20quiero%20ver%20opciones%20de%20pago%20para%20BECOME%20EXPERIENCE" style="color:var(--guinda)">WhatsApp</a> y lo vemos juntas.</p></details>
-    <details><summary>¿Tengo que tomarme el día completo?</summary><p class="resp">Sí. Empezamos a las 10:00 AM y cerramos a las 6:00 PM. Es un día solo, sin bloques sueltos a los que se pueda entrar y salir: la continuidad es parte de cómo funciona. Considera el día completo, sin pendientes a media tarde.</p></details>
-    <details><summary>¿Qué pasa si al final no puedo asistir?</summary><p class="resp">Tu lugar es transferible: puedes cederlo a otra persona sin costo, en cualquier momento antes del día. Solo avísame para cambiar el nombre del gafete. Y si se te complica algo, escríbeme por WhatsApp y lo vemos entre las dos.</p></details>
-    <details><summary>¿Voy a tener que contar cosas íntimas delante de mujeres que no conozco?</summary><p class="resp">Vas a compartir lo que tú decidas compartir. No hay turnos obligatorios ni dinámicas para exponer a nadie.<br><br>La mayor parte del trabajo es contigo: por escrito, en silencio, en tu propio cuaderno. Lo que se dice en voz alta lo eliges tú.<br><br>Y lo que pasa en la sala se queda en la sala. Eso no es una frase bonita: está escrito en los términos y condiciones de esta página, y se lo pido a cada una el mismo día.</p></details>
-  </div>
+  <details class="faq-bloque">
+    <summary class="faq-boton">
+      <span class="faq-pill">
+        <span class="faq-pill-txt" data-abrir="Ver las 8 preguntas" data-cerrar="Cerrar las preguntas"></span>
+        <span class="faq-pill-ico" aria-hidden="true"></span>
+      </span>
+    </summary>
+    <div class="faq-lista">
+      <article class="faq-item">
+        <h3>¿Dónde exactamente es?</h3>
+        <p class="resp">Es en mi casa, en la Ciudad de México. Por eso el grupo es pequeño.</p>
+      </article>
+      <article class="faq-item">
+        <h3>No vivo en la Ciudad de México. ¿Vale la pena viajar?</h3>
+        <p class="resp">Es presencial y no hay versión en línea: lo que pasa en la sala no se traslada a una pantalla.<br><br>Si tienes que volar, yo creo que vale la pena. Es un fin de semana — llegas el viernes, vives el sábado completo, regresas el domingo. Y hay algo que empieza antes del día: cuando decides moverte de tu ciudad por ti, algo ya cambió.<br><br>Yo he tomado vuelos para estar en salas que me movieron algo, y ninguno me ha pesado.<br><br>Si quieres ayuda con la logística, escríbeme. Y no necesitas esperarme para apartar tu lugar.</p>
+      </article>
+      <article class="faq-item">
+        <h3>No sé si esto es para mí.</h3>
+        <p class="resp">La sección de arriba está escrita justo para eso, y está escrita en serio. Si después de leerla sigues dudando, escríbeme y lo platicamos: prefiero decirte que no es tu momento a que ocupes un lugar por convencerte a medias.</p>
+      </article>
+      <article class="faq-item">
+        <h3>Ya hice cosas parecidas y no me cambiaron nada.</h3>
+        <p class="resp">A mí también me pasó. Lo que noté después es que casi todas trabajaban la estrategia y ninguna la identidad, y por eso el efecto duraba lo que duraba el entusiasmo. Aquí el trabajo es al revés: primero quién toma las decisiones, después las decisiones.</p>
+      </article>
+      <article class="faq-item">
+        <h3>No tengo el monto completo ahora mismo.</h3>
+        <p class="resp">Antes de descartarlo, platícalo conmigo. Casi siempre hay una forma, y hay dos que funcionan bien:<br><br><strong>Tu tarjeta de crédito.</strong> Si la tuya te da meses sin intereses, puedes apoyarte en eso: el cargo se hace completo y tú lo difieres con tu banco.<br><br><strong>Un plan de pagos.</strong> Apartas tu lugar con un anticipo y acordamos el resto en pagos. La única condición es que quede cubierto antes del día del evento.<br><br>Escríbeme por <a href="https://wa.me/525564938428?text=Hola%20Florencia%2C%20quiero%20ver%20opciones%20de%20pago%20para%20BECOME%20EXPERIENCE" style="color:var(--guinda)">WhatsApp</a> y lo vemos juntas.</p>
+      </article>
+      <article class="faq-item">
+        <h3>¿Tengo que tomarme el día completo?</h3>
+        <p class="resp">Sí. Empezamos a las 10:00 AM y cerramos a las 6:00 PM. Es un día solo, sin bloques sueltos a los que se pueda entrar y salir: la continuidad es parte de cómo funciona. Considera el día completo, sin pendientes a media tarde.</p>
+      </article>
+      <article class="faq-item">
+        <h3>¿Qué pasa si al final no puedo asistir?</h3>
+        <p class="resp">Tu lugar es transferible: puedes cederlo a otra persona sin costo, en cualquier momento antes del día. Solo avísame para cambiar el nombre del gafete. Y si se te complica algo, escríbeme por WhatsApp y lo vemos entre las dos.</p>
+      </article>
+      <article class="faq-item">
+        <h3>¿Voy a tener que contar cosas íntimas delante de mujeres que no conozco?</h3>
+        <p class="resp">Vas a compartir lo que tú decidas compartir. No hay turnos obligatorios ni dinámicas para exponer a nadie.<br><br>La mayor parte del trabajo es contigo: por escrito, en silencio, en tu propio cuaderno. Lo que se dice en voz alta lo eliges tú.<br><br>Y lo que pasa en la sala se queda en la sala. Eso no es una frase bonita: está escrito en los términos y condiciones de esta página, y se lo pido a cada una el mismo día.</p>
+      </article>
+    </div>
+  </details>
 </section>
 
 <!-- ══════════ PRECIO ══════════ -->
