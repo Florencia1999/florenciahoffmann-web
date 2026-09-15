@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 180">
+  <rect width="120" height="180" fill="#FAF9F7"/>
+  <rect x="14" y="8" width="92" height="164" rx="46" fill="none" stroke="#5C1A2B" stroke-width="5"/>
+  <rect x="24" y="18" width="72" height="144" rx="36" fill="none" stroke="#5C1A2B" stroke-width="2.5" opacity=".5"/>
+  <text x="60" y="130" text-anchor="middle" font-family="Parisienne, 'Snell Roundhand', cursive" font-size="116" fill="#5C1A2B">B</text>
+</svg>
