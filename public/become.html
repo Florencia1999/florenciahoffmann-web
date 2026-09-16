@@ -702,9 +702,9 @@ header .marca .pal{
   content:"";position:absolute;left:0;top:.62em;width:9px;height:1px;background:var(--guinda);
 }
 .filtro .no li::before{background:var(--humo)}
-.filtro-intro{margin:0 0 22px;font-size:.98rem}
 .filtro ul{gap:19px}
 .filtro li strong{font-weight:400;font-family:var(--display);font-size:1.03rem}
+.filtro li.perfil::before{display:none}
 .filtro li .cita{font-family:var(--display);font-style:italic;color:var(--guinda)}
 
 /* ───────────── pendiente ───────────── */
@@ -1052,11 +1052,11 @@ body{padding-bottom:86px}
   <div class="filtro" style="margin-top:20px">
     <div class="si">
       <h3>Es para ti si</h3>
-      <p class="filtro-intro">Tienes resultados, ambición y claridad de que quieres crecer, pero sientes que hay algo interno que necesita cambiar para poder llegar ahí.</p>
       <ul>
-        <li><strong>La mujer que vive en automático.</strong> Tienes una vida aparentemente estable o exitosa, pero te das cuenta de que está siguiendo un camino que quizá ya no te emociona.</li>
-        <li><strong>La mujer que quiere volver a conectarse consigo misma.</strong> Funcionas, produces, logras, resuelves… pero estás cansada de vivir desde la exigencia y quieres recuperar paz, presencia y conexión.</li>
-        <li><strong>La mujer cuya vida se ve increíble por fuera, pero no se siente igual por dentro.</strong> Tienes trabajo, negocio, dinero, pareja, viajes, logros… pero internamente sientes: <span class="cita">“¿Por qué si tengo tantas cosas por las que debería estar agradecida, no me siento completamente plena?”</span></li>
+        <li>Tienes resultados, ambición y claridad de que quieres crecer, pero sientes que hay algo interno que necesita cambiar para poder llegar ahí.</li>
+        <li class="perfil"><strong>La mujer que vive en automático.</strong> Tienes una vida aparentemente estable o exitosa, pero te das cuenta de que está siguiendo un camino que quizá ya no te emociona.</li>
+        <li class="perfil"><strong>La mujer que quiere volver a conectarse consigo misma.</strong> Funcionas, produces, logras, resuelves… pero estás cansada de vivir desde la exigencia y quieres recuperar paz, presencia y conexión.</li>
+        <li class="perfil"><strong>La mujer cuya vida se ve increíble por fuera, pero no se siente igual por dentro.</strong> Tienes trabajo, negocio, dinero, pareja, viajes, logros… pero internamente sientes: <span class="cita">“¿Por qué si tengo tantas cosas por las que debería estar agradecida, no me siento completamente plena?”</span></li>
       </ul>
     </div>
     <div class="no">
