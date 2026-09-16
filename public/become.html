@@ -477,6 +477,27 @@ header .marca .pal{
   @keyframes pendulo{0%,100%{transform:rotate(-.7deg)}50%{transform:rotate(.7deg)}}
 }
 
+/* ───────────── qué vas a aprender ───────────── */
+.aprende{
+  list-style:none;margin:clamp(16px,2.6vw,26px) 0 0;padding:0;
+  border-top:1px solid var(--hilo-suave);
+}
+.aprende li{
+  display:grid;grid-template-columns:auto minmax(0,1fr);
+  gap:5px clamp(16px,2.4vw,26px);align-items:baseline;
+  padding:clamp(20px,2.9vw,28px) 0;border-bottom:1px solid var(--hilo-suave);
+}
+.apr-n{
+  grid-row:1 / span 2;
+  font-family:var(--sans);font-size:.6rem;letter-spacing:.2em;
+  color:var(--guinda);padding-top:.5em;
+}
+.aprende h3{
+  font-family:var(--display);font-size:clamp(1.06rem,2.7vw,1.28rem);
+  line-height:1.28;letter-spacing:0;text-transform:none;
+}
+.aprende p{margin:0;color:var(--humo);font-size:.96rem;line-height:1.62;max-width:40rem}
+
 /* ───────────── mockup de piezas ───────────── */
 .mk-escena{
   container-type:inline-size;position:relative;
@@ -1276,6 +1297,39 @@ body{padding-bottom:86px}
     </div>
     <p class="env-hint" id="pista">Toca para abrir</p>
   </div>
+</section>
+
+<!-- ══════════ QUÉ VAS A APRENDER ══════════ -->
+<section class="wrap stack g22">
+  <p class="eyebrow">El trabajo del día</p>
+  <h2>¿Qué vas a <span class="cursiva">aprender</span>?</h2>
+  <ul class="aprende">
+    <li>
+      <span class="apr-n">01</span>
+      <h3>Nueva identidad</h3>
+      <p>Conviértete en la mujer que tu siguiente nivel requiere.</p>
+    </li>
+    <li>
+      <span class="apr-n">02</span>
+      <h3>Nuevos estándares</h3>
+      <p>Eleva lo que aceptas, permites y esperas de tu vida.</p>
+    </li>
+    <li>
+      <span class="apr-n">03</span>
+      <h3>Decisiones desde seguridad</h3>
+      <p>Deja de esperar estar lista y empieza a decidir desde quién eres.</p>
+    </li>
+    <li>
+      <span class="apr-n">04</span>
+      <h3>Merecimiento y expansión</h3>
+      <p>Aprende a recibir más sin tener que demostrar que lo mereces.</p>
+    </li>
+    <li>
+      <span class="apr-n">05</span>
+      <h3>Éxito sin perderte</h3>
+      <p>Crece sin sacrificar tu bienestar, tu vida ni quién eres.</p>
+    </li>
+  </ul>
 </section>
 
 <!-- ══════════ SÍ / NO ══════════ -->
