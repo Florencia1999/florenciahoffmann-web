@@ -538,78 +538,64 @@ header .marca .pal{
 .mk-sello svg{width:64%;height:64%}
 
 /* ── manual ── */
-.mk-manual{left:69.5cqw;bottom:12.5cqw;width:17em;z-index:2}
-.mk-lib-esc{perspective:64em;perspective-origin:62% 42%}
-.mk-lib{
-  position:relative;transform-style:preserve-3d;
-  transform:rotateX(4deg) rotateY(25deg) rotateZ(-1deg);
+.mk-manual{left:69cqw;bottom:15.5cqw;width:18.5em;z-index:2}
+.mk-carp{position:relative;rotate:-1.6deg}
+.mk-carp-hojas{
+  position:absolute;left:.9em;right:.9em;top:-1.15em;height:2em;z-index:-1;
+  background:#F4EFE6;border:1px solid var(--hilo);border-radius:.15em .15em 0 0;
+  rotate:.9deg;
 }
-.mk-lib-tapa{
-  position:relative;height:23.5em;transform:translateZ(1.15em);
+.mk-carp-hojas::before{
+  content:"";position:absolute;left:.5em;right:.5em;top:-.55em;height:1.4em;
+  background:#FAF7F1;border:1px solid var(--hilo);border-radius:.15em .15em 0 0;
+  rotate:-1.6deg;
+}
+.mk-carp-cuerpo{
+  position:relative;height:24.5em;overflow:hidden;border-radius:.2em;
+  border:1px solid var(--hilo);
   background:
-    radial-gradient(120% 90% at 18% 8%,rgba(255,255,255,.14),transparent 55%),
-    linear-gradient(126deg,#71243A 0%,#5C1A2B 40%,#43111F 100%);
-  border-radius:.1em .4em .4em .1em;
-  box-shadow:inset 0 0 0 1px rgba(0,0,0,.34);
+    linear-gradient(118deg,#FFFDFA 0%,#FAF7F1 46%,#EFE9DE 100%);
+  box-shadow:inset -1.6em 0 2.6em rgba(23,21,18,.05);
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  overflow:hidden;
 }
-.mk-lib-tapa::after{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(104deg,rgba(255,255,255,.1),transparent 30%,transparent 76%,rgba(0,0,0,.16));
+.mk-carp-filete{
+  position:absolute;inset:1.15em;border:1px solid rgba(92,26,43,.2);border-radius:.1em;
 }
-.mk-lib-filete{position:absolute;inset:1.4em 1.3em;border:1px solid rgba(240,228,216,.28);border-radius:.1em}
-.mk-lib-lomo{
-  position:absolute;left:0;top:0;bottom:0;width:2.3em;backface-visibility:hidden;
-  transform-origin:left center;transform:rotateY(-90deg) translateZ(-1.15em);
-  background:linear-gradient(90deg,#2F0B15,#4B1424 55%,#5C1A2B);
-  display:flex;align-items:center;justify-content:center;
+.mk-faja{
+  position:absolute;left:-1px;right:-1px;top:35%;z-index:2;
+  padding:1.5em 0 1.35em;
+  background:linear-gradient(112deg,#6E2337 0%,#5C1A2B 45%,#47121F 100%);
+  display:flex;flex-direction:column;align-items:center;
+  color:#F0E4D8;white-space:nowrap;
+  box-shadow:0 .1em .3em rgba(23,21,18,.22);
 }
-.mk-lib-lomo span{
-  font-family:var(--display);font-size:.82em;letter-spacing:.26em;
-  text-transform:uppercase;color:rgba(240,228,216,.62);
-  writing-mode:vertical-rl;text-indent:.26em;
+.mk-faja::before,.mk-faja::after{
+  content:"";position:absolute;left:0;right:0;height:.35em;
 }
-.mk-lib-canto{
-  position:absolute;right:0;top:.22em;bottom:.22em;width:2.3em;backface-visibility:hidden;
-  transform-origin:right center;transform:rotateY(90deg) translateZ(-1.15em);
-  background:
-    repeating-linear-gradient(180deg,rgba(23,21,18,.13) 0 1px,transparent 1px .3em),
-    linear-gradient(90deg,#D8CFC0,#FBF8F2 40%,#E6DFD2);
+.mk-faja::before{top:0;background:linear-gradient(180deg,rgba(255,255,255,.16),transparent)}
+.mk-faja::after{bottom:0;background:linear-gradient(0deg,rgba(0,0,0,.24),transparent)}
+.mk-faja .mono{height:4.9em;width:auto;color:#F0E4D8;opacity:.96}
+.mk-faja-pal{
+  font-family:var(--display);font-size:1.28em;letter-spacing:.3em;
+  text-transform:uppercase;line-height:1;text-indent:.3em;margin-top:.5em;
 }
-.mk-lib-canto-sup{
-  position:absolute;left:0;right:0;top:0;height:2.3em;backface-visibility:hidden;
-  transform-origin:center top;transform:rotateX(90deg) translateZ(-1.15em);
-  background:
-    repeating-linear-gradient(90deg,rgba(23,21,18,.12) 0 1px,transparent 1px .3em),
-    linear-gradient(180deg,#EFE9DE,#D5CCBD);
-}
-.mk-lib-lock{
-  position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;
-  color:#F0E4D8;white-space:nowrap;padding-left:.8em;
-  filter:drop-shadow(0 .05em .05em rgba(0,0,0,.45));
-}
-.mk-lib-lock .mono{height:6.1em;width:auto;color:#F0E4D8;opacity:.96}
-.mk-lib-pal{
-  font-family:var(--display);font-size:1.44em;letter-spacing:.3em;
-  text-transform:uppercase;line-height:1;text-indent:.3em;margin-top:.55em;
-}
-.mk-lib-exp{
-  font-family:var(--script);font-size:2em;line-height:.74;
+.mk-faja-exp{
+  font-family:var(--script);font-size:1.78em;line-height:.74;
   margin-top:-.2em;transform:translateX(.42em);
 }
-.mk-lib-regla{width:4.4em;height:1px;background:rgba(240,228,216,.38);margin:1.5em 0 1.1em}
-.mk-lib-pie{
-  font-family:var(--sans);font-size:.74em;letter-spacing:.3em;
-  text-transform:uppercase;color:rgba(240,228,216,.5);text-indent:.3em;
+.mk-carp-pie{
+  position:absolute;left:0;right:0;bottom:2.4em;z-index:2;text-align:center;
+  font-family:var(--sans);font-size:.72em;letter-spacing:.32em;
+  text-transform:uppercase;color:var(--guinda);opacity:.75;text-indent:.32em;
 }
-.mk-lib-sombra{
-  position:absolute;left:-8%;right:-16%;bottom:-1.3em;height:2.6em;z-index:-1;
-  background:radial-gradient(50% 50% at 50% 50%,rgba(23,21,18,.3),rgba(23,21,18,0) 72%);
+.mk-carp-liga{
+  position:absolute;top:-.55em;bottom:-.75em;right:2.3em;width:.72em;z-index:3;
+  background:linear-gradient(90deg,#3F1019,#7B2840 42%,#5C1A2B);
+  box-shadow:0 0 .35em rgba(23,21,18,.3);
+  border-radius:.1em;
 }
 
-
-.mk-escena .mk-gf .gafete{
+.mk-gf .gafete{
   position:relative;width:24cqw;animation:none;padding-top:10.316cqw;
   perspective:126.316cqw;transform-origin:top center;
 }
@@ -1338,28 +1324,23 @@ body{padding-bottom:86px}
       </span>
     </div>
 
-        <div class="mk-p mk-manual" aria-hidden="true">
-      <div class="mk-lib-esc">
-        <div class="mk-lib">
-          <span class="mk-lib-lomo"><span>Become</span></span>
-          <span class="mk-lib-canto"></span>
-          <span class="mk-lib-canto-sup"></span>
-          <div class="mk-lib-tapa">
-            <span class="mk-lib-filete"></span>
-            <span class="mk-lib-lock">
-              <svg class="mono" viewBox="0 0 120 180">
-                <rect x="14" y="8" width="92" height="164" rx="46" fill="none" stroke="currentColor" stroke-width="1.7"/>
-                <rect x="21.5" y="15.5" width="77" height="149" rx="38.5" fill="none" stroke="currentColor" stroke-width="1" opacity=".5"/>
-                <text x="60" y="130" text-anchor="middle" font-family="Parisienne, cursive" font-size="116" fill="currentColor">B</text>
-              </svg>
-              <span class="mk-lib-pal">Become</span>
-              <span class="mk-lib-exp">experience</span>
-              <span class="mk-lib-regla"></span>
-              <span class="mk-lib-pie">Manual de trabajo</span>
-            </span>
+        <div class="mk-p mk-manual mk-sombra" aria-hidden="true">
+      <div class="mk-carp">
+        <span class="mk-carp-hojas"></span>
+        <div class="mk-carp-cuerpo">
+          <span class="mk-carp-filete"></span>
+          <div class="mk-faja">
+            <svg class="mono" viewBox="0 0 120 180">
+              <rect x="14" y="8" width="92" height="164" rx="46" fill="none" stroke="currentColor" stroke-width="1.7"/>
+              <rect x="21.5" y="15.5" width="77" height="149" rx="38.5" fill="none" stroke="currentColor" stroke-width="1" opacity=".5"/>
+              <text x="60" y="130" text-anchor="middle" font-family="Parisienne, cursive" font-size="116" fill="currentColor">B</text>
+            </svg>
+            <span class="mk-faja-pal">Become</span>
+            <span class="mk-faja-exp">experience</span>
           </div>
+          <span class="mk-carp-pie">Manual de trabajo</span>
         </div>
-        <span class="mk-lib-sombra"></span>
+        <span class="mk-carp-liga"></span>
       </div>
     </div>
 
