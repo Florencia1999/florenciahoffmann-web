@@ -560,7 +560,7 @@ header .marca .pal{
 }
 
 /* ── comida ── */
-.mk-comida{left:74cqw;bottom:1cqw;width:18.5em;height:14.2em;z-index:5;color:var(--humo)}
+.mk-comida{left:73cqw;bottom:1cqw;width:19.5em;height:15em;z-index:5}
 .mk-comida svg{width:100%;height:100%;display:block}
 
 .mk-escena .mk-gf .gafete{
@@ -1303,14 +1303,51 @@ body{padding-bottom:86px}
     </div>
 
     <div class="mk-p mk-comida" aria-hidden="true">
-      <svg viewBox="8 14 104 80" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="60" cy="54" r="32"/>
-        <circle cx="60" cy="54" r="23" opacity=".45"/>
-        <path d="M16 22v16M21.5 22v16M27 22v16"/>
-        <path d="M16 38h11c0 4.4-2.2 6.6-5.5 6.6S16 42.4 16 38Z"/>
-        <path d="M21.5 44.6V86"/>
-        <path d="M100 22c4.2 4.4 4.2 14.6 0 19"/>
-        <path d="M100 22v64"/>
+      <svg viewBox="0 0 260 200" aria-hidden="true">
+        <defs>
+          <linearGradient id="mkPlata" x1="0" y1="0" x2=".82" y2="1">
+            <stop offset="0" stop-color="#FDFCFB"/><stop offset=".2" stop-color="#C4C2BD"/>
+            <stop offset=".4" stop-color="#EFEEEB"/><stop offset=".62" stop-color="#ADABA6"/>
+            <stop offset=".8" stop-color="#E4E2DE"/><stop offset="1" stop-color="#B8B6B1"/>
+          </linearGradient>
+          <linearGradient id="mkAro" x1=".1" y1="0" x2=".9" y2="1">
+            <stop offset="0" stop-color="#E9E8E5"/><stop offset=".45" stop-color="#B6B4AF"/>
+            <stop offset=".75" stop-color="#DBD9D5"/><stop offset="1" stop-color="#A6A49F"/>
+          </linearGradient>
+          <radialGradient id="mkPozo" cx=".36" cy=".26" r=".9">
+            <stop offset="0" stop-color="#DEDCD8"/><stop offset=".55" stop-color="#C3C1BC"/>
+            <stop offset="1" stop-color="#ABA8A2"/>
+          </radialGradient>
+          <linearGradient id="mkCarta" x1="0" y1="0" x2=".35" y2="1">
+            <stop offset="0" stop-color="#FDFAF4"/><stop offset="1" stop-color="#EFE8DB"/>
+          </linearGradient>
+        </defs>
+
+        <g stroke="#93918C" stroke-width=".55" stroke-linejoin="round">
+          <path d="M130.0 26.0A9.1 9.1 0 0 1 146.5 27.9A9.1 9.1 0 0 1 162.1 33.3A9.1 9.1 0 0 1 176.1 42.1A9.1 9.1 0 0 1 187.9 53.9A9.1 9.1 0 0 1 196.7 67.9A9.1 9.1 0 0 1 202.1 83.5A9.1 9.1 0 0 1 204.0 100.0A9.1 9.1 0 0 1 202.1 116.5A9.1 9.1 0 0 1 196.7 132.1A9.1 9.1 0 0 1 187.9 146.1A9.1 9.1 0 0 1 176.1 157.9A9.1 9.1 0 0 1 162.1 166.7A9.1 9.1 0 0 1 146.5 172.1A9.1 9.1 0 0 1 130.0 174.0A9.1 9.1 0 0 1 113.5 172.1A9.1 9.1 0 0 1 97.9 166.7A9.1 9.1 0 0 1 83.9 157.9A9.1 9.1 0 0 1 72.1 146.1A9.1 9.1 0 0 1 63.3 132.1A9.1 9.1 0 0 1 57.9 116.5A9.1 9.1 0 0 1 56.0 100.0A9.1 9.1 0 0 1 57.9 83.5A9.1 9.1 0 0 1 63.3 67.9A9.1 9.1 0 0 1 72.1 53.9A9.1 9.1 0 0 1 83.9 42.1A9.1 9.1 0 0 1 97.9 33.3A9.1 9.1 0 0 1 113.5 27.9A9.1 9.1 0 0 1 130.0 26.0Z" fill="url(#mkPlata)"/>
+          <path d="M130.0 42.0A6.8 6.8 0 0 1 142.9 43.5A6.8 6.8 0 0 1 155.2 47.7A6.8 6.8 0 0 1 166.2 54.7A6.8 6.8 0 0 1 175.3 63.8A6.8 6.8 0 0 1 182.3 74.8A6.8 6.8 0 0 1 186.5 87.1A6.8 6.8 0 0 1 188.0 100.0A6.8 6.8 0 0 1 186.5 112.9A6.8 6.8 0 0 1 182.3 125.2A6.8 6.8 0 0 1 175.3 136.2A6.8 6.8 0 0 1 166.2 145.3A6.8 6.8 0 0 1 155.2 152.3A6.8 6.8 0 0 1 142.9 156.5A6.8 6.8 0 0 1 130.0 158.0A6.8 6.8 0 0 1 117.1 156.5A6.8 6.8 0 0 1 104.8 152.3A6.8 6.8 0 0 1 93.8 145.3A6.8 6.8 0 0 1 84.7 136.2A6.8 6.8 0 0 1 77.7 125.2A6.8 6.8 0 0 1 73.5 112.9A6.8 6.8 0 0 1 72.0 100.0A6.8 6.8 0 0 1 73.5 87.1A6.8 6.8 0 0 1 77.7 74.8A6.8 6.8 0 0 1 84.7 63.8A6.8 6.8 0 0 1 93.8 54.7A6.8 6.8 0 0 1 104.8 47.7A6.8 6.8 0 0 1 117.1 43.5A6.8 6.8 0 0 1 130.0 42.0Z" fill="url(#mkAro)" stroke-width=".4"/>
+          <circle cx="130" cy="100" r="49" fill="url(#mkPozo)" stroke="#9E9B96" stroke-width=".5"/>
+          <circle cx="130" cy="100" r="44" fill="none" stroke="#B9B7B2" stroke-width=".5"/>
+
+          <g fill="url(#mkPlata)" transform="translate(27,0)">
+            <rect x="-9.6" y="16" width="3.2" height="31" rx="1.6"/>
+            <rect x="-4.3" y="15" width="3.2" height="33" rx="1.6"/>
+            <rect x="1" y="15" width="3.2" height="33" rx="1.6"/>
+            <rect x="6.3" y="16" width="3.2" height="31" rx="1.6"/>
+            <path d="M-10.4 41h20.8v7.6c0 7.3-2.9 11.6-6 14.1-1.5 1.2-2 2.3-2 4.2v78.9c0 6.3-1 9.8-2.4 9.8s-2.4-3.5-2.4-9.8V66.9c0-1.9-.5-3-2-4.2-3.1-2.5-6-6.8-6-14.1Z"/>
+          </g>
+
+          <g fill="url(#mkPlata)" transform="translate(233,0)">
+            <path d="M-3.4 14c7.2 5.8 12 17.8 12 31s-4.8 25.2-12 31Z"/>
+            <path d="M-5.2 70h10.4c1.9 0 3.2 1.7 3.1 3.8l-1.7 78c-.1 5.9-3 9.5-6.6 9.5s-6.5-3.6-6.6-9.5l-1.7-78c-.1-2.1 1.2-3.8 3.1-3.8Z"/>
+          </g>
+        </g>
+
+        <g transform="rotate(-1.2 130 100)">
+          <rect x="83" y="77" width="94" height="49" rx="1.5" fill="rgba(55,46,38,.2)" transform="translate(1.6,2.8)"/>
+          <rect x="83" y="77" width="94" height="49" rx="1.5" fill="url(#mkCarta)" stroke="#D6CDBF" stroke-width=".6"/>
+          <text x="130" y="108" text-anchor="middle" font-family="Parisienne, cursive" font-size="26" fill="#3A322A">Men&#250;</text>
+        </g>
       </svg>
     </div>
 
