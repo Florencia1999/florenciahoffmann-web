@@ -596,8 +596,8 @@ header .marca .pal{
 }
 
 /* ── comida ── */
-.mk-comida{left:76.5cqw;bottom:-.8cqw;width:20.5em;z-index:5}
-.mk-comida img{width:100%;height:auto;display:block}
+.mk-comida{left:76cqw;bottom:.5cqw;width:21em;height:16.2em;z-index:5}
+.mk-comida svg{width:100%;height:100%;display:block;overflow:visible}
 
 .mk-escena .mk-gf .gafete{
   position:relative;width:24cqw;animation:none;padding-top:10.316cqw;
@@ -1350,7 +1350,63 @@ body{padding-bottom:86px}
     </div>
 
     <div class="mk-p mk-comida" aria-hidden="true">
-      <img src="/become/assets/mesa-menu.png" alt="" width="760" height="636" loading="lazy">
+      <svg viewBox="0 0 260 200" aria-hidden="true">
+        <defs>
+          <linearGradient id="mkMetal" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#8C8479"/><stop offset=".05" stop-color="#DBD6CC"/>
+            <stop offset=".13" stop-color="#736C63"/><stop offset=".28" stop-color="#E8E4DC"/>
+            <stop offset=".43" stop-color="#FDFCFA"/><stop offset=".56" stop-color="#D2CCC2"/>
+            <stop offset=".71" stop-color="#6B645C"/><stop offset=".85" stop-color="#CEC8BE"/>
+            <stop offset=".94" stop-color="#7B746B"/><stop offset="1" stop-color="#B3ADA3"/>
+          </linearGradient>
+          <linearGradient id="mkMetalV" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#FFFFFF" stop-opacity=".20"/>
+            <stop offset=".5" stop-color="#FFFFFF" stop-opacity="0"/>
+            <stop offset=".8" stop-color="#2A241E" stop-opacity=".32"/>
+            <stop offset=".96" stop-color="#FFFFFF" stop-opacity=".26"/>
+            <stop offset="1" stop-color="#6E675F" stop-opacity=".3"/>
+          </linearGradient>
+          <radialGradient id="mkBrillo" cx=".34" cy=".26" r=".42">
+            <stop offset="0" stop-color="#FFFFFF" stop-opacity=".85"/>
+            <stop offset=".55" stop-color="#FFFFFF" stop-opacity=".18"/>
+            <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="mkCharola" x1="0" y1="0" x2="1" y2=".4">
+            <stop offset="0" stop-color="#9A9289"/><stop offset=".1" stop-color="#E7E2DA"/>
+            <stop offset=".26" stop-color="#ACA59C"/><stop offset=".45" stop-color="#F6F3EE"/>
+            <stop offset=".62" stop-color="#B8B1A8"/><stop offset=".8" stop-color="#EDE9E2"/>
+            <stop offset="1" stop-color="#8F8880"/>
+          </linearGradient>
+          <radialGradient id="mkPiso" cx=".5" cy=".5" r=".5">
+            <stop offset="0" stop-color="#171512" stop-opacity=".26"/>
+            <stop offset=".62" stop-color="#171512" stop-opacity=".1"/>
+            <stop offset="1" stop-color="#171512" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <ellipse cx="130" cy="176" rx="104" ry="12" fill="url(#mkPiso)"/>
+
+        <path d="M22 150a108 21 0 0 0 216 0v-5a108 21 0 0 1-216 0Z" fill="#8B837A"/>
+        <ellipse cx="130" cy="145" rx="108" ry="21" fill="url(#mkCharola)" stroke="#8E8780" stroke-width=".5"/>
+        <ellipse cx="130" cy="145" rx="99" ry="17.5" fill="none" stroke="#FBF8F3" stroke-width=".7" opacity=".55"/>
+
+        <g>
+          <path d="M49 146C49 97 84 61 130 61s81 36 81 85A81 16 0 0 1 49 146Z" fill="url(#mkMetal)"/>
+          <path d="M49 146C49 97 84 61 130 61s81 36 81 85A81 16 0 0 1 49 146Z" fill="url(#mkMetalV)"/>
+          <ellipse cx="100" cy="101" rx="42" ry="29" fill="url(#mkBrillo)" transform="rotate(-16 100 101)"/>
+          <path d="M49 146C49 97 84 61 130 61s81 36 81 85A81 16 0 0 1 49 146Z" fill="none" stroke="#7E776F" stroke-width=".6"/>
+          <path d="M51 140a79 15 0 0 0 158 0" fill="none" stroke="#FBF8F3" stroke-width="1.1" opacity=".5"/>
+        </g>
+
+        <g transform="translate(0,14)">
+          <ellipse cx="130" cy="46" rx="16" ry="4.4" fill="url(#mkCharola)" stroke="#8E8780" stroke-width=".4"/>
+          <path d="M118.5 45.5 122 33h16l3.5 12.5a14 4 0 0 1-23 0Z" fill="url(#mkMetal)" stroke="#837C74" stroke-width=".4"/>
+          <ellipse cx="130" cy="33" rx="10.5" ry="3.4" fill="url(#mkCharola)" stroke="#8E8780" stroke-width=".4"/>
+          <path d="M121 32.4c0-5.6 4-9.4 9-9.4s9 3.8 9 9.4a10.5 3.4 0 0 1-18 0Z" fill="url(#mkMetal)" stroke="#837C74" stroke-width=".4"/>
+          <ellipse cx="126" cy="28" rx="4" ry="2.6" fill="#FFFFFF" opacity=".5" transform="rotate(-20 126 28)"/>
+        </g>
+      </svg>
+
     </div>
 
     <div class="mk-p mk-gafete" aria-hidden="true">
