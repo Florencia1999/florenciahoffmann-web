@@ -478,126 +478,198 @@ header .marca .pal{
 }
 
 /* ───────────── mockup de piezas ───────────── */
-.mk{--mk:clamp(96px,12.5vw,150px)}
-.mk-fila{
-  display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-end;
-  gap:clamp(24px,3.5vw,46px);margin-top:clamp(30px,5vw,52px);
+.mk-escena{
+  container-type:inline-size;position:relative;
+  width:100%;max-width:980px;margin:clamp(24px,4vw,46px) auto 0;
+  aspect-ratio:25/11.5;
 }
-.mk-pieza{margin:0;display:flex;flex-direction:column;align-items:center;gap:15px;min-width:0}
-.mk-obj{position:relative;filter:drop-shadow(0 13px 20px rgba(23,21,18,.13))}
-.mk-cap{
-  font-family:var(--sans);font-size:.55rem;letter-spacing:.24em;
-  text-transform:uppercase;color:var(--humo);white-space:nowrap;
-}
-.mk-obj .mono{color:#F2E7DC}
+.mk-p{position:absolute;font-size:1cqw;line-height:1}
+.mk-p>*{box-sizing:border-box}
+.mk-sombra{filter:drop-shadow(0 1.1em 1.7em rgba(23,21,18,.18))}
 
-/* bolsa */
-.mk-bolsa{width:calc(var(--mk)*.78);padding-top:calc(var(--mk)*.3)}
-.mk-asa{
-  position:absolute;top:0;left:50%;translate:-50% 0;
-  width:calc(var(--mk)*.42);height:calc(var(--mk)*.36);
-  border:calc(var(--mk)*.035) solid var(--guinda);border-bottom:0;
-  border-radius:calc(var(--mk)*.3) calc(var(--mk)*.3) 0 0;
-}
-.mk-bolsa-cuerpo{
-  position:relative;height:calc(var(--mk)*.9);background:var(--guinda);
-  border-radius:1px 1px calc(var(--mk)*.03) calc(var(--mk)*.03);
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:inset calc(var(--mk)*-.09) 0 calc(var(--mk)*.14) rgba(0,0,0,.17);
-}
-.mk-bolsa-cuerpo::before{
-  content:"";position:absolute;inset:0 0 auto;height:calc(var(--mk)*.05);
-  background:rgba(0,0,0,.14);
-}
-.mk-bolsa-cuerpo .mono{height:calc(var(--mk)*.36)}
-
-/* gafete */
-.mk-gafete{width:calc(var(--mk)*.62);padding-top:calc(var(--mk)*.16)}
-.mk-clip{
-  position:absolute;top:0;left:50%;translate:-50% 0;z-index:2;
-  width:calc(var(--mk)*.1);height:calc(var(--mk)*.27);
-  border:1.5px solid var(--humo);border-radius:calc(var(--mk)*.05);
-}
-.mk-tarjeta{
-  position:relative;height:calc(var(--mk)*.92);background:var(--hueso);
-  border:1px solid var(--hilo);display:flex;flex-direction:column;
-}
-.mk-tar-top{
-  background:var(--guinda);padding:calc(var(--mk)*.15) 0 calc(var(--mk)*.08);
-  display:flex;flex-direction:column;align-items:center;gap:calc(var(--mk)*.035);
-}
-.mk-tar-top .mono{height:calc(var(--mk)*.2)}
-.mk-tar-pal{
-  font-family:var(--display);color:#F2E7DC;line-height:1;
-  font-size:calc(var(--mk)*.078);letter-spacing:.2em;text-transform:uppercase;
-}
-.mk-tar-cuerpo{
-  flex:1;display:flex;flex-direction:column;justify-content:center;
-  gap:calc(var(--mk)*.09);padding-inline:calc(var(--mk)*.1);
-}
-.mk-raya{display:block;height:1px;background:var(--hilo)}
-.mk-raya.corta{width:62%}
-.mk-ranura{
-  position:absolute;top:calc(var(--mk)*.05);left:50%;translate:-50% 0;z-index:3;
-  width:calc(var(--mk)*.16);height:calc(var(--mk)*.02);
-  background:rgba(0,0,0,.4);border-radius:99px;
+/* ── bolsa real (reusa el componente .bolsa) ── */
+.mk-escena .mk-bolsa{
+  position:absolute;left:36cqw;bottom:8cqw;width:31cqw;max-width:none;margin:0;z-index:1;
+  filter:drop-shadow(0 2.2cqw 2.8cqw rgba(23,21,18,.22));
 }
 
-/* sobre */
+/* ── gafete real (portado abajo a cqw) ── */
+.mk-gafete{left:19cqw;bottom:.5cqw;z-index:6}
+
+/* ── hojas del plan ── */
+.mk-hojas{left:6cqw;bottom:2.5cqw;width:15em;z-index:3;rotate:-4.5deg}
+.mk-hoja-atras{
+  position:absolute;inset:-1.3em -1.5em 1.3em 1.5em;
+  background:#F2EDE5;border:1px solid var(--hilo);rotate:5.5deg;
+}
+.mk-hoja{
+  position:relative;height:19.6em;background:#FCFAF7;border:1px solid var(--hilo);
+  padding:1.7em 1.5em;display:flex;flex-direction:column;gap:1.15em;
+}
+.mk-hoja-tit{
+  font-family:var(--sans);font-size:1.15em;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--guinda);
+}
+.mk-hoja-regla{height:1px;background:var(--guinda);opacity:.45}
+.mk-hoja-rej{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:.85em}
+.mk-hoja-col{display:flex;flex-direction:column;gap:.78em}
+.mk-hoja-col i{display:block;height:1px;background:var(--hilo)}
+.mk-hoja-col i:first-child{height:.45em;background:rgba(92,26,43,.28)}
+
+/* ── sobre ── */
 .mk-sobre{
-  width:calc(var(--mk)*1.02);height:calc(var(--mk)*.64);
-  background:var(--guinda);border-radius:1px;position:relative;overflow:hidden;
+  left:50cqw;bottom:1.5cqw;width:20em;height:12.6em;z-index:4;rotate:-1.5deg;
+  background:var(--guinda);border-radius:.2em;overflow:hidden;
 }
 .mk-sobre::before{
-  content:"";position:absolute;inset:0;
-  background:rgba(255,255,255,.07);
+  content:"";position:absolute;inset:0;background:rgba(255,255,255,.075);
   clip-path:polygon(0 0,50% 62%,100% 0);
 }
 .mk-sobre::after{
-  content:"";position:absolute;inset:0;
-  border-top:1px solid rgba(0,0,0,.16);
+  content:"";position:absolute;inset:0;border-top:1px solid rgba(0,0,0,.18);
   clip-path:polygon(0 0,50% 62%,100% 0);
 }
 .mk-sello{
   position:absolute;top:50%;left:50%;translate:-50% -50%;z-index:2;
-  width:calc(var(--mk)*.23);height:calc(var(--mk)*.23);border-radius:50%;
-  background:#7B2840;border:1px dashed rgba(242,231,220,.5);
+  width:4.7em;height:4.7em;border-radius:50%;background:#7B2840;
+  border:1px dashed rgba(240,228,216,.5);
   display:flex;align-items:center;justify-content:center;
 }
-.mk-sello svg{width:62%;height:62%}
+.mk-sello svg{width:64%;height:64%}
 
-/* manual */
-.mk-manual{width:calc(var(--mk)*.74);height:calc(var(--mk)*.94);position:relative}
-.mk-hojas{
-  position:absolute;inset:calc(var(--mk)*.03) calc(var(--mk)*-.035) calc(var(--mk)*.02) auto;
-  width:calc(var(--mk)*.07);background:#F3EEE6;border:1px solid var(--hilo);
-  border-radius:0 2px 2px 0;
+/* ── manual ── */
+.mk-manual{left:65cqw;bottom:8cqw;width:17em;z-index:2}
+.mk-man-hojas{
+  position:absolute;inset:.7em -1.1em .5em auto;width:1.6em;
+  background:#F2EDE5;border:1px solid var(--hilo);border-radius:0 .3em .3em 0;
 }
 .mk-tapa{
-  position:absolute;inset:0;background:var(--hueso);border:1px solid var(--hilo);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:calc(var(--mk)*.06);
+  position:relative;height:22.4em;background:var(--hueso);border:1px solid var(--hilo);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.4em;
+  padding-left:2.3em;overflow:hidden;
 }
-.mk-lomo{
-  position:absolute;left:0;top:0;bottom:0;width:calc(var(--mk)*.11);
-  background:var(--guinda);
-}
+.mk-lomo{position:absolute;left:0;top:0;bottom:0;width:2.3em;background:var(--guinda)}
 .mk-man-pal{
-  font-family:var(--display);font-size:calc(var(--mk)*.082);
-  letter-spacing:.22em;text-transform:uppercase;padding-left:calc(var(--mk)*.09);
+  font-family:var(--display);font-size:1.7em;letter-spacing:.22em;
+  text-transform:uppercase;text-indent:.22em;
 }
+.mk-man-raya{width:4.8em;height:1px;background:var(--guinda);opacity:.55}
 .mk-man-sub{
-  font-family:var(--sans);font-size:calc(var(--mk)*.05);letter-spacing:.18em;
-  text-transform:uppercase;color:var(--guinda);padding-left:calc(var(--mk)*.09);
-}
-.mk-man-raya{
-  width:calc(var(--mk)*.2);height:1px;background:var(--guinda);opacity:.5;
-  margin-left:calc(var(--mk)*.09);
+  font-family:var(--sans);font-size:.95em;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--guinda);text-indent:.2em;
 }
 
-/* comida */
-.mk-comida{width:calc(var(--mk)*.95);height:calc(var(--mk)*.73);color:var(--humo)}
+/* ── comida ── */
+.mk-comida{left:74cqw;bottom:1cqw;width:18.5em;height:14.2em;z-index:5;color:var(--humo)}
 .mk-comida svg{width:100%;height:100%;display:block}
+
+.mk-escena .mk-gf .gafete{
+  position:relative;width:24cqw;animation:none;padding-top:10.316cqw;
+  perspective:126.316cqw;transform-origin:top center;
+}
+
+/* ── cordón tejido ── */
+.mk-gf .cinta{
+  position:absolute;top:-0.842cqw;width:2.421cqw;height:11.789cqw;z-index:1;
+  transform-origin:top center;border-radius:0.105cqw;
+  background:
+    repeating-linear-gradient(90deg,rgba(255,255,255,.055) 0 0.105cqw,transparent 0.105cqw 0.316cqw),
+    linear-gradient(90deg,#2E0B16 0%,#5A1A2C 16%,#7B2840 44%,#8A2E48 52%,#5F1C31 76%,#300C18 100%);
+  box-shadow:inset 0 0 0.842cqw rgba(0,0,0,.4),0 0.105cqw 0.211cqw rgba(0,0,0,.25);
+}
+.mk-gf .cinta::after{
+  content:"";position:absolute;inset:0 0.316cqw;
+  border-left:0.105cqw solid rgba(255,255,255,.07);
+  border-right:0.105cqw solid rgba(0,0,0,.18);
+}
+.mk-gf .cinta.izq{left:50%;transform:translateX(-50%) rotate(13.5deg)}
+.mk-gf .cinta.der{left:50%;transform:translateX(-50%) rotate(-13.5deg)}
+
+/* ── herraje metálico ── */
+.mk-gf .herraje{position:absolute;top:8.632cqw;left:50%;translate:-50% 0;z-index:6;width:4cqw;height:5.474cqw}
+.mk-gf .anillo{
+  position:absolute;top:0;left:50%;translate:-50% 0;width:3.158cqw;height:1.789cqw;border-radius:50%;
+  border:0.358cqw solid;border-color:#FBF7F1 #9C9184 #6F665A #DED5C8;
+  box-shadow:0 0.211cqw 0.316cqw rgba(0,0,0,.45),inset 0 0.105cqw 0.105cqw rgba(255,255,255,.7);
+}
+.mk-gf .gancho{
+  position:absolute;top:1.368cqw;left:50%;translate:-50% 0;width:2.211cqw;height:3.474cqw;
+  border:0.358cqw solid;border-top:0;border-radius:0 0 1.158cqw 1.158cqw;
+  border-color:transparent #8E8376 #6B6255 #D6CDC0;
+  box-shadow:0 0.316cqw 0.421cqw -0.105cqw rgba(0,0,0,.4);
+}
+.mk-gf .gancho::after{
+  content:"";position:absolute;left:50%;translate:-50% 0;top:-0.421cqw;
+  width:1.368cqw;height:0.421cqw;border-radius:0.211cqw;
+  background:linear-gradient(180deg,#FBF7F1,#8B8174);
+  box-shadow:0 0.105cqw 0.211cqw rgba(0,0,0,.35);
+}
+
+/* ── portagafetes de vinil ── */
+.mk-gf .porta{
+  position:relative;z-index:2;border-radius:1.158cqw;padding:0.842cqw 0.842cqw 0.947cqw;
+  background:linear-gradient(162deg,rgba(244,236,228,.42),rgba(244,236,228,.10) 42%,rgba(244,236,228,.26));
+  box-shadow:
+    0 3.579cqw 5.684cqw -2.526cqw rgba(32,7,15,.5),
+    0 0.421cqw 1.053cqw -0.316cqw rgba(32,7,15,.28),
+    inset 0 0.105cqw 0 rgba(255,255,255,.6),
+    inset 0 -0.105cqw 0 rgba(255,255,255,.25);
+  transform:rotate(-1.4deg) rotateY(-6deg) rotateX(2deg);
+}
+.mk-gf .ranura{
+  position:absolute;top:-0.105cqw;left:50%;translate:-50% 0;z-index:7;
+  width:4.842cqw;height:0.947cqw;border-radius:0.526cqw;
+  background:linear-gradient(180deg,#F7F3EE,#CFC6BA);
+  box-shadow:inset 0 0.105cqw 0.211cqw rgba(0,0,0,.35),0 0.105cqw 0 rgba(255,255,255,.6);
+}
+.mk-gf .brillo{
+  position:absolute;inset:0;border-radius:1.158cqw;pointer-events:none;z-index:5;
+  background:linear-gradient(116deg,
+    rgba(255,255,255,.30) 0%,rgba(255,255,255,.11) 15%,
+    rgba(255,255,255,0) 32%,rgba(255,255,255,0) 68%,
+    rgba(255,255,255,.06) 84%,rgba(255,255,255,.20) 100%);
+}
+
+/* ── la credencial impresa ── */
+.mk-gf .credencial{
+  position:relative;aspect-ratio:1/1.42;border-radius:0.632cqw;overflow:hidden;
+  background:
+    radial-gradient(135% 85% at 50% -10%,#6A2337,transparent 58%),
+    linear-gradient(168deg,#521A2A,#3C1020 60%,#2C0A15);
+  box-shadow:inset 0 0 0 0.105cqw rgba(0,0,0,.25),inset 0 0.211cqw 0.632cqw rgba(0,0,0,.3);
+  display:flex;padding:1.368cqw;
+}
+.mk-gf .credencial::after{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.1;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+}
+.mk-gf .cred-marco{
+  flex:1;border:0.105cqw solid rgba(240,228,216,.24);border-radius:0.316cqw;
+  display:flex;flex-direction:column;align-items:center;white-space:nowrap;
+  padding:3.158cqw 1.368cqw 1.684cqw;color:#F0E4D8;text-align:center;
+}
+.mk-gf .cred-top{display:flex;flex-direction:column;align-items:center;white-space:nowrap}
+.mk-gf .cred-top .mono{height:6.947cqw;color:#F0E4D8;opacity:.96}
+.mk-gf .cred-pal{
+  font-family:var(--display);font-size:1.987cqw;letter-spacing:.2em;
+  text-transform:uppercase;line-height:1;padding-left:.2em;margin-top:0.737cqw;
+}
+.mk-gf .cred-exp{
+  font-family:var(--script);font-size:2.728cqw;line-height:.74;
+  margin-top:-.24em;transform:translateX(.22em);
+}
+.mk-gf .cred-nombre{
+  flex:1;width:100%;display:flex;flex-direction:column;
+  justify-content:flex-end;align-items:center;gap:0.737cqw;padding-bottom:0.421cqw;min-height:4.632cqw;
+}
+.mk-gf .cred-raya{width:78%;height:0.105cqw;background:rgba(240,228,216,.38)}
+.mk-gf .cred-k{
+  font-size:0.674cqw;letter-spacing:.46em;text-transform:uppercase;
+  color:rgba(240,228,216,.5);padding-left:.46em;
+}
+.mk-gf .cred-pie{display:flex;flex-direction:column;align-items:center;gap:0.421cqw;padding-top:1.263cqw}
+.mk-gf .cred-f1{font-family:var(--display);font-size:0.893cqw;letter-spacing:.24em;text-transform:uppercase;color:rgba(240,228,216,.88)}
+.mk-gf .cred-f2{font-size:0.674cqw;letter-spacing:.34em;text-transform:uppercase;color:rgba(240,228,216,.46);padding-left:.34em}
 
 /* ───────────── categorías ───────────── */
 .rejilla{display:grid;gap:1px;background:var(--hilo);border:1px solid var(--hilo)}
@@ -1184,81 +1256,98 @@ body{padding-bottom:86px}
   <p class="eyebrow" style="text-align:center">El día del evento</p>
   <h2 style="text-align:center">Todo esto te <span class="cursiva">espera</span></h2>
 
-  <div class="mk-fila">
+  <div class="mk-escena" role="img" aria-label="Las piezas de Become Experience: la bolsa con el logo, tu gafete, la invitación, el manual de trabajo, el plan de 90 días y la comida.">
 
-    <figure class="mk-pieza">
-      <div class="mk-obj mk-bolsa">
-        <span class="mk-asa" aria-hidden="true"></span>
-        <div class="mk-bolsa-cuerpo">
-          <svg class="mono" viewBox="0 0 120 180" role="img" aria-label="Become">
-            <rect x="14" y="8" width="92" height="164" rx="46" fill="none" stroke="currentColor" stroke-width="1.7"/>
-            <rect x="21.5" y="15.5" width="77" height="149" rx="38.5" fill="none" stroke="currentColor" stroke-width="1" opacity=".5"/>
-            <text x="60" y="130" text-anchor="middle" font-family="Parisienne, cursive" font-size="116" fill="currentColor">B</text>
-          </svg>
-        </div>
-      </div>
-      <figcaption class="mk-cap">La bolsa</figcaption>
-    </figure>
-
-    <figure class="mk-pieza">
-      <div class="mk-obj mk-gafete">
-        <span class="mk-clip" aria-hidden="true"></span>
-        <div class="mk-tarjeta">
-          <span class="mk-ranura" aria-hidden="true"></span>
-          <div class="mk-tar-top">
-            <svg class="mono" viewBox="0 0 120 180" aria-hidden="true">
-              <rect x="14" y="8" width="92" height="164" rx="46" fill="none" stroke="currentColor" stroke-width="1.7"/>
-              <text x="60" y="130" text-anchor="middle" font-family="Parisienne, cursive" font-size="116" fill="currentColor">B</text>
-            </svg>
-            <span class="mk-tar-pal">Become</span>
-          </div>
-          <div class="mk-tar-cuerpo">
-            <span class="mk-raya" aria-hidden="true"></span>
-            <span class="mk-raya corta" aria-hidden="true"></span>
-          </div>
-        </div>
-      </div>
-      <figcaption class="mk-cap">Tu gafete</figcaption>
-    </figure>
-
-    <figure class="mk-pieza">
-      <div class="mk-obj mk-sobre">
-        <span class="mk-sello" aria-hidden="true">
-          <svg viewBox="0 0 120 180">
-            <text x="60" y="130" text-anchor="middle" font-family="Parisienne, cursive" font-size="118" fill="#F2E7DC">B</text>
-          </svg>
-        </span>
-      </div>
-      <figcaption class="mk-cap">La invitación</figcaption>
-    </figure>
-
-    <figure class="mk-pieza">
-      <div class="mk-obj mk-manual">
-        <span class="mk-hojas" aria-hidden="true"></span>
-        <div class="mk-tapa">
-          <span class="mk-lomo" aria-hidden="true"></span>
-          <span class="mk-man-pal">Become</span>
-          <span class="mk-man-raya" aria-hidden="true"></span>
-          <span class="mk-man-sub">Manual</span>
-        </div>
-      </div>
-      <figcaption class="mk-cap">El manual</figcaption>
-    </figure>
-
-    <figure class="mk-pieza">
-      <div class="mk-obj mk-comida">
-        <svg viewBox="8 14 104 80" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="60" cy="54" r="32"/>
-          <circle cx="60" cy="54" r="23" opacity=".45"/>
-          <path d="M16 22v16M21.5 22v16M27 22v16"/>
-          <path d="M16 38h11c0 4.4-2.2 6.6-5.5 6.6S16 42.4 16 38Z"/>
-          <path d="M21.5 44.6V86"/>
-          <path d="M100 22c4.2 4.4 4.2 14.6 0 19"/>
-          <path d="M100 22v64"/>
+    <figure class="mk-p mk-bolsa bolsa" aria-hidden="true">
+      <img src="/become/assets/bolsa-silueta2.png" alt="" width="523" height="557" loading="lazy">
+      <span class="marca-bolsa">
+        <svg class="mono" viewBox="0 0 120 180">
+          <rect x="14" y="8" width="92" height="164" rx="46" fill="none" stroke="currentColor" stroke-width="1.7"/>
+          <rect x="21.5" y="15.5" width="77" height="149" rx="38.5" fill="none" stroke="currentColor" stroke-width="1" opacity=".5"/>
+          <text x="60" y="130" text-anchor="middle" font-family="Parisienne, cursive" font-size="116" fill="currentColor">B</text>
         </svg>
-      </div>
-      <figcaption class="mk-cap">La comida</figcaption>
+        <span class="bp">Become</span>
+        <span class="be">experience</span>
+      </span>
     </figure>
+
+    <div class="mk-p mk-hojas mk-sombra" aria-hidden="true">
+      <span class="mk-hoja-atras"></span>
+      <div class="mk-hoja">
+        <span class="mk-hoja-tit">Plan de 90 días</span>
+        <span class="mk-hoja-regla"></span>
+        <div class="mk-hoja-rej">
+          <span class="mk-hoja-col"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="mk-hoja-col"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+          <span class="mk-hoja-col"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="mk-p mk-sobre mk-sombra" aria-hidden="true">
+      <span class="mk-sello">
+        <svg viewBox="0 0 120 180">
+          <text x="60" y="130" text-anchor="middle" font-family="Parisienne, cursive" font-size="118" fill="#F0E4D8">B</text>
+        </svg>
+      </span>
+    </div>
+
+    <div class="mk-p mk-manual mk-sombra" aria-hidden="true">
+      <span class="mk-man-hojas"></span>
+      <div class="mk-tapa">
+        <span class="mk-lomo"></span>
+        <span class="mk-man-pal">Become</span>
+        <span class="mk-man-raya"></span>
+        <span class="mk-man-sub">Manual de trabajo</span>
+      </div>
+    </div>
+
+    <div class="mk-p mk-comida" aria-hidden="true">
+      <svg viewBox="8 14 104 80" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="60" cy="54" r="32"/>
+        <circle cx="60" cy="54" r="23" opacity=".45"/>
+        <path d="M16 22v16M21.5 22v16M27 22v16"/>
+        <path d="M16 38h11c0 4.4-2.2 6.6-5.5 6.6S16 42.4 16 38Z"/>
+        <path d="M21.5 44.6V86"/>
+        <path d="M100 22c4.2 4.4 4.2 14.6 0 19"/>
+        <path d="M100 22v64"/>
+      </svg>
+    </div>
+
+    <div class="mk-p mk-gafete" aria-hidden="true">
+      <div class="mk-gf">
+        <div class="gafete">
+          <span class="cinta izq"></span>
+          <span class="cinta der"></span>
+          <span class="herraje"><span class="anillo"></span><span class="gancho"></span></span>
+          <div class="porta">
+            <span class="ranura"></span>
+            <div class="credencial">
+              <div class="cred-marco">
+                <div class="cred-top">
+                  <svg class="mono" viewBox="0 0 120 180">
+                    <rect x="14" y="8" width="92" height="164" rx="46" fill="none" stroke="currentColor" stroke-width="1.7"/>
+                    <rect x="21.5" y="15.5" width="77" height="149" rx="38.5" fill="none" stroke="currentColor" stroke-width="1" opacity=".5"/>
+                    <text x="60" y="130" text-anchor="middle" font-family="Parisienne, cursive" font-size="116" fill="currentColor">B</text>
+                  </svg>
+                  <span class="cred-pal">Become</span>
+                  <span class="cred-exp">experience</span>
+                </div>
+                <div class="cred-nombre">
+                  <span class="cred-raya"></span>
+                  <span class="cred-k">Nombre</span>
+                </div>
+                <div class="cred-pie">
+                  <span class="cred-f1">17 octubre 2026</span>
+                  <span class="cred-f2">Ciudad de México</span>
+                </div>
+              </div>
+            </div>
+            <span class="brillo"></span>
+          </div>
+        </div>
+      </div>
+    </div>
 
   </div>
 </section>
