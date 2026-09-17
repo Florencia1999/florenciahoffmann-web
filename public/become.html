@@ -278,40 +278,6 @@ a:focus-visible,[tabindex]:focus-visible,button:focus-visible,summary:focus-visi
   .dc-fotos figure{margin-bottom:18px}
 }
 
-/* ───────────── llegas / sales ───────────── */
-.antes-despues{display:grid;gap:0;width:100%}
-@media(min-width:640px){.antes-despues{grid-template-columns:1fr 1fr}}
-.ad{display:flex;flex-direction:column;gap:15px;padding:22px 0}
-.ad+.ad{border-top:1px solid var(--hilo-suave)}
-@media(min-width:640px){
-  .ad{padding:4px 30px}
-  .ad:first-child{padding-left:0}
-  .ad+.ad{border-top:0;border-left:1px solid var(--hilo-suave)}
-}
-.ad-h{
-  font-size:.55rem;letter-spacing:.26em;text-transform:uppercase;
-  color:var(--guinda);padding-left:.26em;
-}
-.ad ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:13px}
-.ad li{
-  position:relative;padding-left:19px;font-size:.92rem;line-height:1.52;
-  color:var(--humo);
-}
-.ad.final li{color:var(--tinta)}
-.ad li::before{
-  content:"";position:absolute;left:0;top:.68em;width:8px;height:1px;
-  background:var(--guinda);opacity:.7;
-}
-
-/* ───────────── acento ───────────── */
-.acento{
-  border-left:2px solid var(--guinda);
-  padding:4px 0 4px 24px;margin-top:10px;
-  display:flex;flex-direction:column;gap:14px;max-width:38rem;
-}
-.acento p{margin:0}
-.acento p:not(.eyebrow){font-size:1.06rem;line-height:1.55}
-
 /* ───────────── credenciales ───────────── */
 .credenciales{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column;max-width:34rem}
 .credenciales li{
@@ -356,9 +322,6 @@ header .marca .pal{
 }
 
 /* ───────────── gafete ───────────── */
-.gafete-zona{display:grid;gap:clamp(34px,5vw,58px);align-items:center;justify-items:center}
-@media(min-width:880px){.gafete-zona{grid-template-columns:auto 1fr;gap:clamp(40px,6vw,76px)}}
-.gafete-wrap{display:flex;flex-direction:column;align-items:center;gap:22px;margin:0;flex:0 0 auto}
 
 .gafete{
   position:relative;width:min(228px,62vw);padding-top:98px;
@@ -468,10 +431,6 @@ header .marca .pal{
 .cred-f1{font-family:var(--display);font-size:.53rem;letter-spacing:.24em;text-transform:uppercase;color:rgba(240,228,216,.88)}
 .cred-f2{font-size:.4rem;letter-spacing:.34em;text-transform:uppercase;color:rgba(240,228,216,.46);padding-left:.34em}
 
-.gafete-wrap figcaption{
-  font-size:.54rem;letter-spacing:.3em;text-transform:uppercase;
-  color:var(--guinda);text-align:center;padding-left:.3em;
-}
 @media(prefers-reduced-motion:no-preference){
   .gafete{animation:pendulo 11s ease-in-out infinite}
   @keyframes pendulo{0%,100%{transform:rotate(-.7deg)}50%{transform:rotate(.7deg)}}
@@ -1527,80 +1486,6 @@ body{padding-bottom:86px}
     </div>
     <div class="col-foto silueta-wrap">
       <img src="/become/assets/florencia-silueta.png" alt="Florencia Hoffmann de cuerpo completo, vestido negro" width="463" height="1150" loading="lazy">
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ QUÉ ES ══════════ -->
-<section class="wrap stack g44" style="background:var(--papel);padding-inline:var(--gutter)">
-  <div class="stack g22">
-    <p class="eyebrow">La experiencia</p>
-    <h2>Un día. Una sala. Un grupo <span class="cursiva">pequeño</span></h2>
-    <p class="lede">BECOME EXPERIENCE es una experiencia presencial e íntima de un día completo.</p>
-    <div class="acento">
-      <p class="eyebrow">Lo más importante que puedo decirte</p>
-      <p>Esto no es una clase. No vas a estar sentada tomando nota de algo que yo te conté.</p>
-      <p class="humo">Todo el día está hecho de ejercicios, dinámicas y conversaciones que se viven en el cuerpo, no en el cuaderno. Vas a escribir, sí — pero después de haberlo sentido, no en lugar de sentirlo. Hay cosas que solo se mueven cuando estás en el mismo cuarto que alguien más, y por eso esto es presencial.</p>
-      <p style="font-family:var(--display);font-style:italic;color:var(--guinda)">Te vas a acordar de lo que viviste. De lo que te expliquen, no.</p>
-    </div>
-  </div>
-  <div class="gafete-zona">
-    <figure class="gafete-wrap">
-      <div class="gafete">
-        <span class="cinta izq" aria-hidden="true"></span>
-        <span class="cinta der" aria-hidden="true"></span>
-        <span class="herraje" aria-hidden="true">
-          <span class="anillo"></span>
-          <span class="gancho"></span>
-        </span>
-        <div class="porta">
-          <span class="ranura" aria-hidden="true"></span>
-          <div class="credencial">
-            <div class="cred-marco">
-              <div class="cred-top">
-                <svg class="mono" viewBox="0 0 120 180" role="img" aria-label="Become">
-                  <rect x="14" y="8" width="92" height="164" rx="46" fill="none" stroke="currentColor" stroke-width="1.7"/>
-                  <rect x="21.5" y="15.5" width="77" height="149" rx="38.5" fill="none" stroke="currentColor" stroke-width="1" opacity=".5"/>
-                  <text x="60" y="130" text-anchor="middle" font-family="Parisienne, cursive" font-size="116" fill="currentColor">B</text>
-                </svg>
-                <span class="cred-pal">Become</span>
-                <span class="cred-exp">experience</span>
-              </div>
-              <div class="cred-nombre">
-                <span class="cred-raya" aria-hidden="true"></span>
-                <span class="cred-k">Nombre</span>
-              </div>
-              <div class="cred-pie">
-                <span class="cred-f1">17 octubre 2026</span>
-                <span class="cred-f2">Ciudad de México</span>
-              </div>
-            </div>
-          </div>
-          <span class="brillo" aria-hidden="true"></span>
-        </div>
-      </div>
-      <figcaption>Tu acceso</figcaption>
-    </figure>
-    <div class="stack g22">
-      <div class="antes-despues">
-        <div class="ad">
-          <span class="ad-h">10:00 AM · Llegas</span>
-          <ul>
-            <li>Con la pregunta de por qué nada de lo que lograste terminó de llenarte</li>
-            <li>Cargando sola algo que nadie sabe que cargas</li>
-            <li>Sin saber qué le falta a una vida que ya se ve bien por fuera</li>
-          </ul>
-        </div>
-        <div class="ad final">
-          <span class="ad-h">6:00 PM · Sales</span>
-          <ul>
-            <li>Con tu techo identificado y escrito con tus palabras</li>
-            <li>Con tu declaración dicha en voz alta frente a las demás</li>
-            <li>Con tu plan de 90 días terminado, no pendiente</li>
-            <li>Con un grupo de mujeres que sabe exactamente hacia dónde vas</li>
-          </ul>
-        </div>
-      </div>
     </div>
   </div>
 </section>
