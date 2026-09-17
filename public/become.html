@@ -895,7 +895,7 @@ header .marca .pal{
 }
 .filtro .no li::before{background:var(--humo)}
 .filtro ul{gap:19px}
-.filtro li .cita{font-family:var(--display);font-style:italic;color:var(--guinda)}
+.filtro li .cita,.resp-l .cita{font-family:var(--display);font-style:italic;color:var(--guinda)}
 
 /* ───────────── pendiente ───────────── */
 .pendiente{
@@ -949,6 +949,16 @@ header .marca .pal{
   content:counter(faq,decimal-leading-zero);
   font-family:var(--sans);font-size:.58rem;letter-spacing:.2em;
   color:var(--guinda);
+}
+.resp-t{
+  margin:0 0 11px;font-family:var(--display);color:var(--guinda);
+  font-size:1.02rem;letter-spacing:.07em;
+}
+.resp-l{list-style:none;margin:0 0 24px;padding:0;display:flex;flex-direction:column;gap:11px}
+.resp-l:last-child{margin-bottom:0}
+.resp-l li{position:relative;padding-left:20px}
+.resp-l li::before{
+  content:"";position:absolute;left:0;top:.62em;width:9px;height:1px;background:var(--guinda);
 }
 .faq-item .resp{margin:0;color:var(--humo);max-width:44rem;font-size:.98rem;line-height:1.66}
 @media (max-width:620px){
@@ -1614,7 +1624,7 @@ body{padding-bottom:86px}
       </article>
       <article class="faq-item">
         <h3>No sé si esto es para mí.</h3>
-        <p class="resp">Al principio de esta página está el "para quién sí y para quién no", escrito justo para eso y escrito en serio. Si después de leerla sigues dudando, escríbeme y lo platicamos: prefiero decirte que no es tu momento a que ocupes un lugar por convencerte a medias.</p>
+        <div class="resp"><p class="resp-t">Es para ti si</p><ul class="resp-l"><li>Tienes resultados, ambición y claridad de que quieres crecer, pero sientes que hay algo interno que necesita cambiar para poder llegar ahí.</li><li>Tienes una vida aparentemente estable o exitosa, pero te das cuenta de que está siguiendo un camino que quizá ya no te emociona.</li><li>Funcionas, produces, logras, resuelves… pero estás cansada de vivir desde la exigencia y quieres recuperar paz, presencia y conexión.</li><li>Tienes trabajo, negocio, dinero, pareja, viajes, logros… pero internamente sientes: <span class="cita">“¿Por qué si tengo tantas cosas por las que debería estar agradecida, no me siento completamente plena?”</span></li></ul><p class="resp-t">No es para ti si</p><ul class="resp-l"><li>Estás buscando una solución rápida que cambie tu vida sin que tú tengas que involucrarte profundamente en el proceso.</li><li>No estás dispuesta a invertir tiempo, energía y recursos en ti misma. Tu siguiente nivel requiere compromiso contigo.</li><li>Estás esperando sentirte 100% lista antes de comenzar. La transformación no siempre empieza cuando desaparecen tus dudas; muchas veces empieza cuando decides avanzar a pesar de ellas.</li><li>No quieres salir de tu zona conocida. Parte de la experiencia consiste precisamente en cuestionar lo que hoy consideras “normal” para ti y abrirte a una nueva posibilidad.</li></ul></div>
       </article>
       <article class="faq-item">
         <h3>Ya hice cosas parecidas y no me cambiaron nada.</h3>
