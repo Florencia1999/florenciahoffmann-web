@@ -727,7 +727,6 @@ header .marca .pal{
 .frase-escultura .recorte img{max-width:300px;filter:none}
 
 /* el costo de no hacer nada */
-.costo{text-align:left}
 
 /* ───────────── dos columnas ───────────── */
 .duo{display:grid;gap:clamp(30px,5vw,60px);align-items:start}
@@ -739,21 +738,6 @@ header .marca .pal{
 
 
 /* ───────────── timeline ───────────── */
-/* ───────────── stack de valor ───────────── */
-.pieza{display:grid;gap:6px 26px;padding-block:26px;border-top:1px solid var(--hilo-suave)}
-@media(min-width:760px){.pieza{grid-template-columns:1fr auto;align-items:start}}
-.pieza:last-of-type{border-bottom:1px solid var(--hilo-suave)}
-.pieza .obj{margin:0 0 10px;font-family:var(--display);font-style:italic;color:var(--guinda);font-size:1.02rem}
-.pieza h3{font-size:.86rem;letter-spacing:.2em;margin-bottom:6px}
-.pieza .desc{margin:0;font-size:.95rem;color:var(--humo);max-width:36rem}
-.pieza .val{
-  font-family:var(--display);font-size:1.05rem;letter-spacing:.05em;white-space:nowrap;
-  font-variant-numeric:tabular-nums;
-}
-.total{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;padding-top:24px}
-.total .k{font-size:.66rem;letter-spacing:.24em;text-transform:uppercase;color:var(--humo)}
-.total .v{font-family:var(--display);font-size:1.5rem;letter-spacing:.04em}
-
 /* ───────────── bono destacado ───────────── */
 .ico-regalo{
   width:clamp(28px,5vw,40px);height:auto;color:var(--guinda);flex:0 0 auto;
@@ -765,7 +749,7 @@ header .marca .pal{
 }
 .bono:last-of-type{border-bottom:1px solid var(--hilo)}
 .bono-cab{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap}
-.bono,.bono-cab>div,.pieza>div{min-width:0}
+.bono,.bono-cab>div{min-width:0}
 .bono .cond{
   margin:7px 0 0;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;
   color:var(--guinda);
@@ -1490,110 +1474,6 @@ body{padding-bottom:86px}
   <div class="wrap frase-escultura">
     <p>Your old identity got you here. Your next identity will <span class="cursiva">take you there.</span></p>
     <figure class="recorte"><img src="/become/assets/escultura-silueta.png" alt="Escultura clásica de una mujer de espaldas" width="426" height="835" loading="lazy"></figure>
-  </div>
-</section>
-
-<!-- ══════════ QUÉ INCLUYE ══════════ -->
-<section class="wrap stack g22">
-  <p class="eyebrow">Qué incluye</p>
-  <h2>Cada pieza está aquí por una <span class="cursiva">razón</span></h2>
-  <p class="lede humo">No es una lista de cosas incluidas. Cada elemento entró para desactivar una duda concreta — la duda va escrita encima.</p>
-
-  <div style="margin-top:20px">
-    <div class="pieza">
-      <div>
-        <p class="obj">“¿No sería más fácil hacerlo por Zoom?”</p>
-        <h3>Experiencia presencial</h3>
-        <p class="desc">Un día completo en mi casa, en la Ciudad de México. Lo que se mueve en un cuarto con otras mujeres no se reproduce por una pantalla, y por eso no hay versión en línea.</p>
-      </div>
-    </div>
-
-    <div class="pieza">
-      <div>
-        <p class="obj">“Siempre me distraigo, contesto mensajes, me salgo a media sesión.”</p>
-        <h3>Inmersión total</h3>
-        <p class="desc">De diez de la mañana a seis de la tarde, sin bloques sueltos ni entradas y salidas. Un solo día, del principio al final, con el teléfono lejos.</p>
-      </div>
-    </div>
-
-    <div class="pieza">
-      <div>
-        <p class="obj">“¿Voy a estar sentada ocho horas oyendo a alguien hablar?”</p>
-        <h3>Actividades vivenciales</h3>
-        <p class="desc">No. El día está hecho de ejercicios y dinámicas que se hacen, no de temas que se explican. Vas a escribir, sí — pero después de haberlo vivido, no en lugar de vivirlo.</p>
-      </div>
-    </div>
-
-    <div class="pieza">
-      <div>
-        <p class="obj">“¿Y de comer qué? ¿Tengo que salir a resolver algo a media tarde?”</p>
-        <h3>Comida</h3>
-        <p class="desc">Comida y café incluidos durante todo el día. Se come en la misma mesa donde se trabaja, y esa parte del día también cuenta.</p>
-      </div>
-    </div>
-
-    <div class="pieza">
-      <div>
-        <p class="obj">“Nunca me acuerdo después de lo que trabajé.”</p>
-        <h3>Manual de trabajo</h3>
-        <p class="desc">Tuyo, en papel. Se llena durante el día y se sigue usando después: es el registro de lo que decidiste, con tu letra.</p>
-      </div>
-    </div>
-
-    <div class="pieza">
-      <div>
-        <p class="obj">“Lo mío lo tengo que resolver yo sola.”</p>
-        <h3>Mastermind</h3>
-        <p class="desc">Un bloque donde tu caso se pone sobre la mesa y el grupo entero piensa contigo. Lo que a ti te tiene atorada, muy probablemente otra ya lo cruzó.</p>
-      </div>
-    </div>
-
-    <div class="pieza">
-      <div>
-        <p class="obj">“Nadie a mi alrededor está donde yo quiero estar.”</p>
-        <h3>Proximidad</h3>
-        <p class="desc">Nos parecemos a quienes tenemos cerca, y por un día completo eso cambia. Estar en la misma sala que mujeres que ya decidieron distinto es, en sí mismo, parte del trabajo.</p>
-      </div>
-    </div>
-
-    <div class="pieza">
-      <div>
-        <p class="obj">“Sé lo que quiero y no sé por dónde empezar el lunes.”</p>
-        <h3>Plan de 90 días</h3>
-        <p class="desc">Terminado antes de que salgas de la sala. No te vas con intenciones: te vas con las decisiones de los próximos tres meses escritas.</p>
-      </div>
-    </div>
-
-    <div class="pieza">
-      <div>
-        <p class="obj">“¿Va a ser un día de trabajo intenso y nada más?”</p>
-        <h3>Sorpresas</h3>
-        <p class="desc">No te voy a decir qué hay adentro. Solo que ninguna se va con las manos vacías, y que lo que lleva tu bolsa está escogido para esta sala — no comprado por volumen.</p>
-        <figure class="bolsa">
-          <img src="/become/assets/bolsa-silueta2.png" alt="Bolsa de regalo color vino con el logo de Become Experience" width="523" height="557" loading="lazy">
-          <span class="marca-bolsa" aria-hidden="true">
-            <svg class="mono" viewBox="0 0 120 180">
-              <rect x="14" y="8" width="92" height="164" rx="46" fill="none" stroke="currentColor" stroke-width="1.7"/>
-              <rect x="21.5" y="15.5" width="77" height="149" rx="38.5" fill="none" stroke="currentColor" stroke-width="1" opacity=".5"/>
-              <text x="60" y="130" text-anchor="middle" font-family="Parisienne, cursive" font-size="116" fill="currentColor">B</text>
-            </svg>
-            <span class="bp">Become</span>
-            <span class="be">experience</span>
-          </span>
-        </figure>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════ COSTO DE NO HACER NADA ══════════ -->
-<section class="respiro">
-  <div class="wrap costo">
-    <div style="display:flex;flex-direction:column;gap:18px">
-    <p class="eyebrow" style="color:#E9C9B0">El costo de quedarse igual</p>
-      <p style="font-family:var(--display);font-style:italic;font-size:clamp(1.2rem,3.6vw,1.6rem);line-height:1.4;margin:0">Yo estuve tres años diciéndome que el momento no era ese. Que primero cerraba el año, que primero pasaba la temporada fuerte, que primero.</p>
-      <p style="margin:0;color:#E3D2C6;font-size:1rem">Y los tres años pasaron igual. La diferencia no fue que llegara el momento correcto: fue que un día dejé de esperarlo. Si dentro de un año todo sigue exactamente igual, ya sabemos qué se hizo distinto.</p>
-    </div>
   </div>
 </section>
 
