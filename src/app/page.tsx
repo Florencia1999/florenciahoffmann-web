@@ -174,7 +174,7 @@ export default function Home() {
 
         {/* SOBRE MÍ breve */}
         <section style={{ padding: "100px 24px", background: "var(--cream)" }}>
-          <div style={{ maxWidth: 1000, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 380px", gap: "5rem", alignItems: "center" }}>
+          <div className="sobre-grid" style={{ maxWidth: 1000, margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 380px", gap: "5rem", alignItems: "center" }}>
             {/* Texto */}
             <div>
               <p style={{
@@ -334,7 +334,7 @@ export default function Home() {
             }}>Mis libros</p>
 
             {/* Libro 1 — Haz que suceda (con portada + Amazon) */}
-            <div style={{
+            <div className="libro-grid" style={{
               display: "grid",
               gridTemplateColumns: "240px 1fr",
               gap: "4rem",
@@ -411,7 +411,7 @@ export default function Home() {
             </div>
 
             {/* Libro 2 — Por algo y para algo */}
-            <div style={{
+            <div className="libro-grid" style={{
               display: "grid",
               gridTemplateColumns: "240px 1fr",
               gap: "4rem",
@@ -526,6 +526,141 @@ export default function Home() {
           </div>
         </section>
 
+        {/* 1% LADIES — curso digital */}
+        <section style={{
+          padding: "110px 24px",
+          background: "var(--dark)",
+          color: "var(--cream)",
+        }}>
+          <div style={{ maxWidth: 900, margin: "0 auto", textAlign: "center" }}>
+            <p style={{
+              fontFamily: "Montserrat, sans-serif",
+              fontSize: "0.7rem",
+              letterSpacing: "0.3em",
+              color: "var(--gold)",
+              textTransform: "uppercase",
+              marginBottom: "1.5rem",
+            }}>Curso digital · Acceso inmediato</p>
+            <h2 style={{
+              fontFamily: "Cormorant Garamond, serif",
+              fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
+              fontWeight: 300,
+              color: "var(--cream)",
+              marginBottom: "1.5rem",
+              lineHeight: 1.1,
+            }}>
+              <em style={{ color: "var(--gold)", fontStyle: "normal" }}>1%</em> Ladies
+            </h2>
+            <p style={{
+              fontFamily: "Cormorant Garamond, serif",
+              fontSize: "clamp(1.2rem, 2.5vw, 1.6rem)",
+              fontStyle: "italic",
+              color: "rgba(250,247,242,0.85)",
+              maxWidth: 620,
+              margin: "0 auto 2.5rem",
+              lineHeight: 1.5,
+            }}>
+              El 99% de las mujeres se conforma con menos de lo que merece.
+              Tú eres del 1% que elige algo diferente.
+            </p>
+            <p style={{
+              fontFamily: "Montserrat, sans-serif",
+              fontSize: "0.95rem",
+              color: "rgba(250,247,242,0.7)",
+              lineHeight: 1.9,
+              maxWidth: 640,
+              margin: "0 auto 3.5rem",
+            }}>
+              El programa donde te enseño a elevar tu mentalidad, activar tu energía femenina
+              y construir relaciones de alto valor — para vivir con la seguridad, el magnetismo
+              y los estándares de una mujer del 1%.
+            </p>
+
+            {/* Qué incluye */}
+            <div style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(210px, 1fr))",
+              gap: "2rem",
+              textAlign: "left",
+              marginBottom: "3.5rem",
+              paddingTop: "2.5rem",
+              borderTop: "1px solid rgba(168,144,106,0.35)",
+            }}>
+              {[
+                { t: "5 módulos", d: "El manual completo para pensar, actuar y vivir como una mujer de alto valor." },
+                { t: "1 año de acceso", d: "Mentalidad, autoimagen, energía femenina, relaciones, éxito y manifestación." },
+                { t: "Audios de reprogramación", d: "Diseñados para reprogramar tu mente con poder, escúchalos donde estés." },
+                { t: "Guía de transformación", d: "Workbooks y ejercicios prácticos para integrar cada enseñanza." },
+              ].map((item) => (
+                <div key={item.t}>
+                  <p style={{
+                    fontFamily: "Montserrat, sans-serif",
+                    fontSize: "0.72rem",
+                    letterSpacing: "0.18em",
+                    textTransform: "uppercase",
+                    color: "var(--gold)",
+                    fontWeight: 600,
+                    marginBottom: "0.75rem",
+                  }}>{item.t}</p>
+                  <p style={{
+                    fontFamily: "Montserrat, sans-serif",
+                    fontSize: "0.85rem",
+                    color: "rgba(250,247,242,0.6)",
+                    lineHeight: 1.8,
+                  }}>{item.d}</p>
+                </div>
+              ))}
+            </div>
+
+            <p style={{
+              fontFamily: "Montserrat, sans-serif",
+              fontSize: "0.75rem",
+              letterSpacing: "0.15em",
+              textTransform: "uppercase",
+              color: "rgba(250,247,242,0.55)",
+              marginBottom: "2.5rem",
+            }}>
+              + 3 bonos de regalo al inscribirte hoy
+            </p>
+
+            <p style={{
+              fontFamily: "Cormorant Garamond, serif",
+              fontSize: "2.6rem",
+              fontWeight: 400,
+              color: "var(--cream)",
+              marginBottom: "0.4rem",
+              lineHeight: 1,
+            }}>$97 USD</p>
+            <p style={{
+              fontFamily: "Montserrat, sans-serif",
+              fontSize: "0.72rem",
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              color: "rgba(250,247,242,0.5)",
+              marginBottom: "2.5rem",
+            }}>Pago único · Acceso inmediato</p>
+
+            <a
+              href="https://legacyladies.com.mx"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                background: "var(--gold)",
+                color: "var(--dark)",
+                padding: "18px 52px",
+                fontFamily: "Montserrat, sans-serif",
+                fontSize: "0.8rem",
+                letterSpacing: "0.15em",
+                textTransform: "uppercase",
+                fontWeight: 600,
+                display: "inline-block",
+              }}
+            >
+              Quiero ser parte de 1% Ladies
+            </a>
+          </div>
+        </section>
+
         {/* BLOG preview */}
         <section style={{ padding: "100px 24px", background: "var(--cream)" }}>
           <div style={{ maxWidth: 900, margin: "0 auto" }}>
@@ -632,6 +767,21 @@ export default function Home() {
           </div>
         </section>
       </main>
+      <style>{`
+        @media (max-width: 768px) {
+          .libro-grid {
+            grid-template-columns: 1fr !important;
+            gap: 2rem !important;
+            justify-items: center;
+            text-align: center;
+          }
+          .libro-grid > a:first-child { max-width: 200px; width: 100%; }
+          .sobre-grid {
+            grid-template-columns: 1fr !important;
+            gap: 2.5rem !important;
+          }
+        }
+      `}</style>
       <Footer />
     </>
   );
