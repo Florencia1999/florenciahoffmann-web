@@ -63,11 +63,26 @@ export default function RootLayout({
     jobTitle: "Emprendedora, Autora y Conferencista Internacional",
     knowsLanguage: ["es", "en"],
     sameAs: [
-      "https://www.instagram.com/florencia.hoffmann?igsh=MWhnOXkydHZhY2lncQ%3D%3D&utm_source=qr",
+      "https://www.instagram.com/florencia.hoffmann/",
       "https://www.linkedin.com/in/florenciahoffmann/",
-      "https://www.tiktok.com/@florencia_hoffmann?_r=1&_t=ZS-95yzdCexrBk",
+      "https://www.tiktok.com/@florencia_hoffmann",
       "https://www.youtube.com/@florenciahoffmann1",
     ],
+    address: { "@type": "PostalAddress", addressCountry: "MX" },
+    knowsAbout: [
+      "Liderazgo femenino",
+      "Magnetismo femenino",
+      "Mentalidad de éxito",
+      "Estándares altos",
+      "Emprendimiento femenino",
+      "Desarrollo personal para mujeres",
+      "Marcas premium",
+    ],
+    hasOccupation: {
+      "@type": "Occupation",
+      name: "Conferencista",
+      occupationLocation: { "@type": "Country", name: "México" },
+    },
     worksFor: { "@type": "Organization", name: "Gatier" },
     founder: [
       { "@type": "Organization", name: "Gatier" },

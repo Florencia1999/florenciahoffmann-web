@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "3 lecciones que aprendí al co-fundar una marca premium en México",
+  alternates: { canonical: "/blog/tres-lecciones-marca-premium" },
   description:
     "Florencia Hoffmann comparte las tres lecciones que más la transformaron al co-fundar Gatier: posicionamiento premium, identidad personal como activo y las personas correctas.",
 };

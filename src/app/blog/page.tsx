@@ -3,7 +3,8 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Blog de Liderazgo Femenino y Mentalidad",
+  alternates: { canonical: "/blog" },
   description:
     "Artículos de Florencia Hoffmann sobre liderazgo femenino, magnetismo, estándares altos, negocios premium y transformación personal.",
 };

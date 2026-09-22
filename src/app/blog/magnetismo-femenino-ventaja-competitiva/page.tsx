@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "El magnetismo femenino como ventaja competitiva",
+  alternates: { canonical: "/blog/magnetismo-femenino-ventaja-competitiva" },
   description:
     "Florencia Hoffmann explica cómo la presencia, confianza y elegancia femenina se traducen en resultados reales en los negocios y el liderazgo.",
 };

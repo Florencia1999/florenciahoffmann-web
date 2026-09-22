@@ -5,6 +5,7 @@ import GatierSlideshow from "@/components/GatierSlideshow";
 
 export const metadata: Metadata = {
   title: "Gatier — Agua Premium",
+  alternates: { canonical: "/gatier" },
   description:
     "Gatier: agua de manantial gasificada premium co-fundada por Florencia Hoffmann y Spencer Hoffmann. Presente en más de 10 estados de Estados Unidos.",
 };

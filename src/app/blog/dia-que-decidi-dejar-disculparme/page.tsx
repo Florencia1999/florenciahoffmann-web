@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "El día que decidí dejar de disculparme por ser femenina",
+  alternates: { canonical: "/blog/dia-que-decidi-dejar-disculparme" },
   description:
     "Florencia Hoffmann comparte la historia que transformó su carrera: el día que decidió aparecer completamente — con su feminidad, elegancia y autenticidad — y todo cambió.",
 };

@@ -3,7 +3,8 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Sobre mí",
+  title: "Sobre mí — Empresaria y Conferencista Mexicana",
+  alternates: { canonical: "/sobre-mi" },
   description:
     "Florencia Hoffmann: emprendedora mexicana, co-fundadora de Gatier, autora de 'Haz que suceda' y 'Por algo y para algo', conferencista internacional y creadora de FLORECE.",
 };

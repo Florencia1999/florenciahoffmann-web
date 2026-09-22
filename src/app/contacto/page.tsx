@@ -3,7 +3,8 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Contacto",
+  title: "Contratar a Florencia Hoffmann para tu evento",
+  alternates: { canonical: "/contacto" },
   description: "Contrata a Florencia Hoffmann para tu próximo evento, conferencia o keynote. Disponible para México, Estados Unidos y Latinoamérica.",
 };
 

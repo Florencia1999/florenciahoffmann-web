@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "FLORECE — Mentoría con Florencia Hoffmann",
+  alternates: { canonical: "/florece" },
   description:
     "FLORECE: programa de transformación femenina y experiencia en Jet Privado con Florencia Hoffmann.",
 };

@@ -3,7 +3,8 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Conferencias",
+  title: "Conferencista de Liderazgo Femenino en México",
+  alternates: { canonical: "/conferencias" },
   description:
     "Florencia Hoffmann como conferencista internacional — temas de liderazgo femenino, magnetismo, estándares altos y mentalidad de éxito. Disponible para eventos en México, EE.UU. y Latinoamérica.",
 };

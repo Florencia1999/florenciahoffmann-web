@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Por qué los estándares altos son la estrategia más subestimada",
+  alternates: { canonical: "/blog/estandares-altos-estrategia-negocios" },
   description:
     "Florencia Hoffmann explica por qué los estándares altos son una ventaja competitiva — y cómo comunicarlos desde la gracia, no desde la dureza.",
 };

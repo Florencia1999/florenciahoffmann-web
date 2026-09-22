@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Florencia Hoffmann — Emprendedora, Autora y Conferencista Internacional",
+  alternates: { canonical: "/" },
 };
 
 export default function Home() {
@@ -510,7 +511,7 @@ export default function Home() {
               Un programa internacional para mujeres que ya son extraordinarias — y quieren vivir como tal.
               Con comunidad activa en México, Estados Unidos y mujeres de distintos países del mundo.
             </p>
-            <a href="https://florenciahoffmann.com/lander" style={{
+            <a href="/florece" style={{
               background: "var(--gold)",
               color: "var(--dark)",
               padding: "16px 48px",
