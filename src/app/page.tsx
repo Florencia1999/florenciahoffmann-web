@@ -419,15 +419,17 @@ export default function Home() {
               borderTop: "1px solid rgba(168,144,106,0.3)",
               paddingTop: "3rem",
             }}>
-              <img
-                src="/libro-poralgo-nobg.png"
-                alt="Por algo y para algo — Florencia Montoya"
-                style={{
-                  width: "100%",
-                  filter: "drop-shadow(8px 12px 40px rgba(33,24,16,0.18))",
-                  display: "block",
-                }}
-              />
+              <a href="https://www.amazon.com/dp/B0HKL25Y2S" target="_blank" rel="noopener noreferrer" style={{ display: "block" }}>
+                <img
+                  src="/libro-poralgo-nobg.png"
+                  alt="Por algo y para algo — Florencia Montoya"
+                  style={{
+                    width: "100%",
+                    filter: "drop-shadow(8px 12px 40px rgba(33,24,16,0.18))",
+                    display: "block",
+                  }}
+                />
+              </a>
               <div>
                 <p style={{
                   fontFamily: "Montserrat, sans-serif",
@@ -436,7 +438,7 @@ export default function Home() {
                   color: "var(--gold)",
                   textTransform: "uppercase",
                   marginBottom: "0.75rem",
-                }}>2023 · Autoedición</p>
+                }}>2023 · Disponible en Amazon</p>
                 <h3 style={{
                   fontFamily: "Cormorant Garamond, serif",
                   fontSize: "2.2rem",
@@ -454,7 +456,11 @@ export default function Home() {
                 }}>
                   Un diario de transformación para formar el hábito de vivir una vida en constante gratitud que te lleve a construir una vida de grandeza.
                 </p>
-                <a href="#" style={{
+                <a
+                  href="https://www.amazon.com/dp/B0HKL25Y2S"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
                   display: "inline-block",
                   background: "var(--dark)",
                   color: "var(--cream)",
