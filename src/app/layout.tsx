@@ -54,6 +54,9 @@ export default function RootLayout({
     name: "Florencia Hoffmann",
     givenName: "Florencia",
     familyName: "Hoffmann",
+    // Sus libros en Amazon y su podcast están a nombre de "Florencia Montoya".
+    // Sin esto, Google trata los dos nombres como dos personas distintas.
+    alternateName: ["Florencia Montoya", "Florencia Hoffmann Montoya"],
     nationality: { "@type": "Country", name: "México" },
     gender: "Female",
     url: "https://florenciahoffmann.com",
@@ -92,15 +95,20 @@ export default function RootLayout({
       {
         "@type": "Book",
         name: "Haz que suceda",
+        alternativeHeadline:
+          "Haz que suceda: Deja de esperar el momento perfecto y comienza a construirlo",
         datePublished: "2026",
         publisher: { "@type": "Organization", name: "Legacy Publisher" },
         inLanguage: "es",
+        // Publicado en Amazon bajo "Florencia Montoya".
+        author: { "@type": "Person", name: "Florencia Montoya" },
       },
       {
         "@type": "Book",
         name: "Por algo y para algo",
         datePublished: "2023",
         inLanguage: "es",
+        author: { "@type": "Person", name: "Florencia Montoya" },
       },
     ],
     interactionStatistic: [
